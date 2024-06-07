@@ -1,4 +1,4 @@
-h4{
+/* h4{
     color: red;
 }
 
@@ -18,3 +18,76 @@ h4{
     border: solid 3px red;
     width: 200px;
 }
+p{
+    background-color: blue;
+} */
+
+/* div{
+    font-size: 10px;
+    background-color: green;
+}
+
+p{
+    background-color: rgb(208, 208, 222);
+    font-size: 4em;
+    width: 10em;
+} */
+
+/* div{
+    background-color: pink ;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+} */
+
+/* 
+.btn{
+    display: block;
+    background-color: red;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 0.4em 1em;
+    border-radius: 0.5em;
+    border: none;
+    color: white;
+    font-size: 16px;
+   
+}
+
+.big{
+    font-size: 24px;
+}
+.small{
+    font-size: 12px;
+}
+
+html{
+    font-size: 20px;
+}
+
+div{
+    font-size: 30px;
+}
+
+p{
+    font-size: 2rem;
+} */
+
+
+
+div>h3{
+    color: brown;
+}
+
+div>ol>li h3 {
+    color: blue;
+}
+
+
+li p{
+    color: red;
+}
+ h3+p{
+    color: blueviolet;
+ }
