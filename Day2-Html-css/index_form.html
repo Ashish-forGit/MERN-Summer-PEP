@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html form and Css</title>
+</head>
+<body>
+    <form action="./contact.html" method="get">
+        <label for="">Username: </label>
+        <input type="text" placeholder="Enter name" name="username" autocomplete="on" required>
+        <br>
+        <br>
+        
+        <label for="">Age: </label>
+        <input type="text" placeholder="Enter age" name="age" value="10" autocomplete="on"> <br> <br>
+        
+        
+        <label for="">Gender:</label> 
+        <input type="radio" value="Male" name="gender" id="m1" required checked> <label for="m1">Male</label>
+        <input type="radio" value="Female" name="gender" id="f1"> <label for="f1">Female</label> <br> <br>
+
+        <label for="">Hobbies</label> 
+        <input type="checkbox" value="reading" name="hobies" id="r1" checked> <label for="r1">reading</label>
+        <input type="checkbox" value="playing" name="hobies" id="p1"> <label for="p1">playing</label>
+        <br> <br>
+
+
+        <label for="">Description:</label> <br>
+        <textarea name="description" id=""></textarea>
+        <br> <br>
+
+
+        <label for="">Select City:</label>
+        <select name="city" id="">
+            <option value="delhi">Delhi</option>
+            <option value="patna" selected>Patna</option>
+            <option value="punjab">Punjab</option>
+
+        </select>
+
+        <br><br>
+        <input type="submit" value="Done">
+        <input type="reset" value="Reset"> <br><br>
+        <button type="submit">Done button</button>
+        <button type="reset">Reset button</button>
+
+    </form>
+    
+</body>
+</html>
