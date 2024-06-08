@@ -1,0 +1,142 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #333;
+    --background-color: #fff;
+    --text-color: #333;
+    --input-border-color: #ccc;
+    --button-hover-color: #45a049;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: var(--text-color);
+}
+
+.form-body {
+    text-align: left;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px; /* Reduced padding */
+    border: 1px solid var(--input-border-color);
+    border-radius: 10px;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 10px; /* Reduced margin-bottom */
+    color: var(--primary-color);
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs label {
+    margin-bottom: 2px; /* Reduced margin-bottom */
+    font-weight: bold;
+}
+
+.inputs input {
+    margin-bottom: 6px; /* Reduced margin-bottom */
+    padding: 6px; /* Reduced padding */
+    font-size: 16px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.inputs input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+#p1-container {
+    position: relative;
+}
+
+#p1 {
+    width: calc(100% - 30px);
+}
+
+#toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px; /* Reduced margin-top */
+}
+
+.buttons button {
+    width: 100%; /* Set width to ensure they are equal */
+    padding: 6px 12px; /* Reduced padding */
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    margin-bottom: 4px; /* Reduced margin-bottom */
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: var(--button-hover-color);
+}
+
+.buttons #sign-google {
+    background-color: var(--secondary-color); /* Set background color to secondary color */
+    color: var(--background-color); /* Set text color to white for contrast */
+}
+
+.buttons span {
+    margin: 4px 0; /* Reduced margin */
+    text-align: center;
+    width: 100%;
+    color: var(--secondary-color);
+}
+
+.buttons p {
+    margin-top: 4px; /* Reduced margin-top */
+    text-align: center;
+    width: 100%;
+}
+.buttons .login-link {
+    color: orange; /* Set color to orange */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.buttons .login-link:hover {
+    color: var(--secondary-color); /* Change color on hover */
+}
+
+@media (max-width: 600px) {
+    .form-body {
+        width: 95%;
+        padding: 10px; /* Adjusted padding for smaller screens */
+    }
+
+    .inputs input {
+        padding: 6px; /* Adjusted padding for smaller screens */
+    }
+
+    .buttons button {
+        padding: 6px 10px; /* Adjusted padding for smaller screens */
+    }
+}

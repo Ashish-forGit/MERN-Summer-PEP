@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="form-body">
+        <div class="heading">
+            <h3>Create an Account</h3>
+        </div>
+        <div class="inputs">
+            <label for="n1">Full Name</label><br>
+            <input type="text" name="username" placeholder="Enter your Name" id="n1"> <br> 
+            <label for="e1">Email</label><br>
+            <input type="email" name="email" id="e1"><br> 
+            <label for="p1">Password</label><br>
+            <div id="p1-container">
+                <input type="password" name="Password" id="p1">
+                <span id="toggle-password">👁️</span>
+            </div>
+            <br>
+            <label for="n">Phone Number</label><br>
+            <input type="text" name="Number" id="n">
+            <div class="buttons">
+                <button type="submit">Sign Up</button> <br>
+                <span>or</span> <br>
+                <button type="submit" id="sign-google">Sign up with Google <span class="google-symbol">&#x1F4F1;</span></button> <br>
+                <p>Already have an Account? <a href="#" class="login-link">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const togglePassword = document.querySelector('#toggle-password');
+        const password = document.querySelector('#p1');
+
+        togglePassword.addEventListener('click', function (e) {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+        });
+    </script>
+</body>
+</html>
