@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body>div {
+    background-color: purple;
+    margin: 48px;
+    height: 200px;
+    width: 200px;
+    padding: 20px;
+}
+
+.c1,
+.c2,
+.c3,
+.c4 {
+    background-color: red;
+    color: white;
+    font-size: 28px;
+    height: 75px;
+    width: 75px;
+}
+
+
+
+/* Task1 */
+/* .c2{
+    position: relative;
+    left: 75px;
+}
+
+.c3{
+    position: relative;
+    left: 75px;
+}  */
+
+/* Task 2 */
+
+/* .c1{
+    position:relative;
+    background-color: aqua;
+    left: 45px;
+    top: 25px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.c2{
+    position: relative;
+    left: 75px;
+}
+
+.c3{
+    position: absolute;
+    right: 0;
+    top: 0
+
+} */
+
+/* task 3 */
+
+.c1 {
+    position: absolute;
+}
+
+.c3 {
+    position: absolute;
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+}
+.c4{
+    position: relative;
+    z-index: 1;
+}
