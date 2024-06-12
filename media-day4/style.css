@@ -4,19 +4,32 @@
     box-sizing: border-box;
 }
 
-.parent{
-    padding: 24px;
+.container{
+    height: 500px;
+
+    margin: 100px;
     background-color: yellow;
 }
 
 .child{
-    background-color: pink;
-    padding: 24px;
+    background-color: red;
+   
+    position: sticky;
+    top: 50px;
+    height: 40px;
+    width: 40px;
 }
-@media (width <=500px) {
+
+
+
+
+
+
+/* @media (width <=500px) {
     .parent{
         height: 200px;
         background-color: black;
+        font-size: 2em;
 
     }
-}
+} */
