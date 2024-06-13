@@ -184,12 +184,17 @@ const arr = [1,2,3,4]
 // })
 // console.log(sum);
 
-const isEven = (x)=>{
-    if(x%2==0) return true;
-    else return false;
-}
-const res = arr.filter(isEven);
-console.log('res',res);
-console.log('array',arr);
+// const isEven = (x)=>{
+//     if(x%2==0) return true;
+//     else return false;
+// }
+// const res = arr.filter(isEven);
+// console.log('res',res);
+// console.log('array',arr);
 
+const words = ['spray', 'el', 'exuberant', 'des', 'present'];
+
+const result = words.filter((word) => word.length <= 5);
+
+console.log(result);
 
