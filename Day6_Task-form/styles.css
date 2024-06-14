@@ -8,12 +8,13 @@ body {
     margin: 0;
 }
 
-.form-container {
+#form-container {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     width: 400px;
+    
     box-sizing: border-box;
 }
 
@@ -62,6 +63,9 @@ button:hover {
 
 .id-card {
     text-align: center;
+    background-image: linear-gradient(pink, cyan);
+    padding: 10px;
+    
 }
 
 .id-card img {

@@ -1,5 +1,5 @@
-document.getElementById('user-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.getElementById('user-form').addEventListener('submit', function(e) {
+    e.preventDefault();
 
     let name = document.getElementById('name').value;
     let dob = document.getElementById('dob').value;
