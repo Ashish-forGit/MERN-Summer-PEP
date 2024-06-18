@@ -63,6 +63,11 @@ main#root {
     max-width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card img:hover {
+    transform: scale(1.1);
 }
 
 /* Product title styling */
@@ -74,10 +79,17 @@ main#root {
 
 /* Product description styling */
 .product-card p {
-    font-size: 1em;
+    
     margin: 0 0 10px;
     line-height: 1.5;
     color: #666;
+    font-size: 0.9em;
+    
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: left;
 }
 
 /* Product price styling */
@@ -88,11 +100,11 @@ main#root {
 }
 
 /* Footer styling (if needed) */
-footer {
+/* footer {
     width: 100%;
     text-align: center;
     padding: 20px;
     background: #f1f1f1;
     position: fixed;
     bottom: 0;
-}
+} */
