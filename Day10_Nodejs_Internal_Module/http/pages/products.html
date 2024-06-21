@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Store</title>
+    <style>
+        /* styles.css */
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #65707f, #c3cfe2);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Nav bar styling */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Search input styling */
+nav input[type="search"] {
+    width: 80%;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Main container styling */
+main#root {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+/* Product card styling */
+.product-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card img:hover {
+    transform: scale(1.1);
+}
+
+/* Product title styling */
+.product-card h3 {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+/* Product description styling */
+.product-card p {
+    
+    margin: 0 0 10px;
+    line-height: 1.5;
+    color: #666;
+    font-size: 0.9em;
+    
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Product price styling */
+.product-card .price {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Footer styling (if needed) */
+/* footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+} */
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <input type="search" oninput="searchProducts(event)" placeholder="Search for products...">
+    </nav>
+    <main id="root"></main>
+    <footer></footer>
+    <script>
+
+
+        const pr1 = fetch("https://dummyjson.com/products");
+        pr1.then((res) => {
+            const pr2 = res.json();
+            pr2.then((data) => {
+                console.log(data);
+                createUI(data);
+            }).catch((err) => {
+                console.error("Error occurred during data parsing: ", err);
+            });
+        }).catch((err) => {
+            console.error("Error occurred during fetch: ", err);
+        });
+
+        const main = document.getElementById('root');
+
+        function createUI(data) {
+            const products = data.products;
+            main.innerHTML = "";  // clears previous data  
+            console.log(products);
+
+            for (let i = 0; i < products.length; i++) {
+                const newCard = document.createElement("div");
+                newCard.className = "product-card";
+
+                const title = document.createElement('h3');
+                title.innerText = products[i].title;
+
+                const img = document.createElement('img');
+                img.setAttribute('src', products[i].thumbnail);
+
+                const description = document.createElement('p');
+                description.innerText = products[i].description;
+
+                const price = document.createElement('p');
+                price.className = 'price';
+                price.innerText = `$${products[i].price}`;
+
+                newCard.appendChild(img);
+                newCard.appendChild(title);
+                newCard.appendChild(description);
+                newCard.appendChild(price);
+
+                main.appendChild(newCard);
+            }
+        }
+
+
+        function searchProducts(e) {
+            const searchedText = e.target.value;
+            fetch(`https://dummyjson.com/products/search?q=${searchedText}`)
+                .then((res) => {
+                    res.json().then((data) => {
+                        createUI(data)
+                    }).catch((err) => {
+                        console.error('Error occurred during data parsing: ', err);
+                    })
+                })
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
