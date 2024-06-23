@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,36 +9,126 @@
             box-sizing: border-box;
         }
 
+        body {
+            font-family: Open Sans, sans-serif;
+        }
+
         nav {
             height: 10vh;
             background-color: rgb(41, 51, 51);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav a {
+            color: rgb(191, 201, 211);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: rgb(109, 203, 224);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(191, 201, 211);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .search-container input {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-container button {
+            padding: 8px 12px;
+            margin-left: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .search-container button:hover {
+            background-color: #555;
         }
 
         main {
             padding: 48px;
-            /* height: 70vh; */
             background-color: rgb(109, 203, 224);
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         footer {
             height: 20vh;
             background-color: rgb(50, 57, 57);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            color: rgb(191, 201, 211);
+        }
+
+        .footer-left,
+        .footer-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-left p {
+            margin: 0 15px;
+        }
+
+        .social-icons a {
+            color: rgb(191, 201, 211);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: rgb(109, 203, 224);
         }
 
         .product-card {
             border: 1px solid grey;
             background-color: rgb(199, 167, 229);
             width: 400px;
-            margin: 24px auto;
+            margin: 24px;
             padding: 16px;
             border-radius: 15px;
-            box-shadow: gray;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .product-card:hover{
-            transform: scale(1.1);
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         img {
@@ -49,11 +140,42 @@
 </head>
 
 <body>
-    <nav></nav>
+    <nav>
+        <div class="logo">ApnaBazzar</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <div class="search-container">
+                <input type="text" placeholder="Coming Soon...">
+                <button type="submit" disabled>Search</button>
+            </div>
+        </div>
+    </nav>
+
+
+
+    
     <main>
         $PRODUCTS$
     </main>
-    <footer></footer>
+
+
+
+
+
+
+    <footer>
+        <div class="footer-left">
+            <p>&copy; 2024 ApnaBazzar. All rights reserved.</p>
+        </div>
+        <div class="footer-right social-icons">
+            <a href="https://www.facebook.com">Facebook</a>
+            <a href="https://www.twitter.com">Twitter</a>
+            <a href="https://www.instagram.com">Instagram</a>
+        </div>
+    </footer>
 </body>
 
 </html>
