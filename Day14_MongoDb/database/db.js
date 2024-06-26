@@ -10,8 +10,6 @@ dbURI = dbURI.replace("<db-name>", process.env.DB_NAME);
 
 // console.log(process.env.PORT);
 
-
-
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(dbURI, {
   serverApi: {
@@ -22,18 +20,24 @@ const client = new MongoClient(dbURI, {
 });
 
 
+const database = client.db(process.env.DB_NAME);
+const productsCollection = database.collection('products');
 
-async function run() {
-  try {
-    const database = client.db(process.env.DB_NAME);
-    const products = database.collection('products');
-     await products.insertOne({
-        name: "ashish"
-    })
-    console.log("MongoDb Connected!");
-}
-catch(error){
-    console.log("error")
-} 
-} 
-run()
+module.exports ={ database, productsCollection}
+
+
+
+// async function run() {
+//   try {
+//     const database = client.db(process.env.DB_NAME);
+//     const products = database.collection('products');
+//      await products.insertOne({
+//         name: "ashish"
+//     })
+//     console.log("MongoDb Connected!");
+// }
+// catch(error){
+//     console.log("error")
+// } 
+// } 
+// run()
