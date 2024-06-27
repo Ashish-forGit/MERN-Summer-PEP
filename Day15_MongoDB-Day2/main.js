@@ -4,7 +4,7 @@
 require('dotenv').config();
 const exprees = require('express');
 const {productRouter} = require('./routes/productRouters.js')
-
+require('./config/db.js')
 const app = exprees();
 
 app.use(exprees.json());
