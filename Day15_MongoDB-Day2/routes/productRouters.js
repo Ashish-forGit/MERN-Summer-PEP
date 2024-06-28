@@ -1,13 +1,13 @@
 const exprees = require('express')
-const {getProducts, createProduct, updateProduct, patchProduct, removeProduct } = require('../controllers/productControllers.js')
+const {checkId, getProducts, createProduct, updateProduct, patchProduct, removeProduct } = require('../controllers/productControllers.js')
 
 const productRouter = exprees.Router();
 
 productRouter.route("/products").get(getProducts);
 productRouter.route("/products").post(createProduct);
-productRouter.route("/products/:id").put(updateProduct);
-productRouter.route("/products/:id").patch(patchProduct);
-productRouter.route("/products/:id").delete(removeProduct);
+productRouter.route("/products/:id").put(checkId, updateProduct);
+productRouter.route("/products/:id").patch(checkId,patchProduct);
+productRouter.route("/products/:id").delete(checkId, removeProduct);
 
 
 
