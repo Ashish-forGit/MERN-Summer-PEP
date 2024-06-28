@@ -33,7 +33,7 @@ const checkId = async(req, res, next)=>{
 }
 
 const getProducts = async (req,res)=>{
-    const products = await productModel.find({});
+    const products = await productModel.find({}).limit(10);
     res.send({
         status: 'success',
         data : {
@@ -138,9 +138,26 @@ const removeProduct = async (req, res) => {
   }
 }
 
+
+const listProducts = async(req, res) =>{
+    const {limit = 10, ...filters} = req.query;
+
+    const pizzaQuery = productModel.find(filters)
+    const limitedPizzas = await pizzaQuery.limit(limit);
+
+    res.json({
+        status: 'success',
+        data: {
+            products: await limitedPizzas
+            }
+    })
+
+}
+
 module.exports = {
   getProducts,
   createProduct,
+  listProducts,
   replaceProduct,
   updateProduct,
   removeProduct,
