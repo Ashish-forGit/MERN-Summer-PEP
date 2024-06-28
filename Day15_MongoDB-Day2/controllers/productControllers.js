@@ -75,6 +75,26 @@ const updateProduct = async (req, res) => {
   try {
       const { id } = req.params;
       const productUpdates = req.body;
+      productUpdates.updatedAt = Date.now();
+      const updatedProduct = await productModel.findOneAndUpdate({_id : id }, productUpdates,{new: true});
+      res.json({
+          status: 'success',
+          data: {
+              product: updatedProduct
+          }
+      });
+  } catch (error) {
+      res.json({
+          status: 'error',
+          message: error.message
+      });
+  }
+}
+
+const replaceProduct = async (req, res) => {
+  try {
+      const { id } = req.params;
+      const productUpdates = req.body;
       if (!productUpdates.title || !productUpdates.price) {
           return res.json({
               status: 'error',
@@ -102,42 +122,11 @@ const updateProduct = async (req, res) => {
   }
 }
 
-const patchProduct = async (req, res) => {
-  try {
-      const { id } = req.params;
-      const productUpdates = req.body;
-      const updatedProduct = await productModel.findByIdAndUpdate(id, { $set: productUpdates }, { new: true });
-      if (!updatedProduct) {
-          return res.json({
-              status: 'error',
-              message: 'Product not found'
-          });
-      }
-      res.json({
-          status: 'success',
-          data: {
-              product: updatedProduct
-          }
-      });
-  } catch (error) {
-      res.json({
-          status: 'error',
-          message: error.message
-      });
-  }
-}
-
 const removeProduct = async (req, res) => {
   try {
       const { id } = req.params;
       const deletedProduct = await productModel.findByIdAndDelete(id);
-      if (!deletedProduct) {
-          return res.json({
-              status: 'error',
-              message: 'Product not found'
-          });
-      }
-      res.json({
+      res.status(204).json({
           status: 'success',
           message: 'Product deleted'
       });
@@ -152,8 +141,8 @@ const removeProduct = async (req, res) => {
 module.exports = {
   getProducts,
   createProduct,
+  replaceProduct,
   updateProduct,
-  patchProduct,
   removeProduct,
   checkId
 }
