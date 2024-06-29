@@ -33,9 +33,13 @@ const checkId = async(req, res, next)=>{
 }
 
 const getProducts = async (req,res)=>{
+    const {limit, page} = req.query;
     const products = await productModel.find({}).limit(10);
+    const countDocuments = await productModel.countDocuments()
     res.send({
         status: 'success',
+        results: products.length, 
+        totalData: countDocuments,
         data : {
             products
         }
@@ -139,8 +143,9 @@ const removeProduct = async (req, res) => {
 
 
 const listProducts = async (req, res) => {
-    console.log('----->',req.query);
-    const { limit = 10, q ="", fields='',page =1 ,sort,...filters} = req.query;
+    try {
+        console.log('----->',req.query);
+    const { limit = 10, q ="", fields='',page =1 ,sort="price",...filters} = req.query;
     const selectionFields = fields.split('_');
     const sortFields = sort.split('_').join(" ");
     console.log(filters);
@@ -181,6 +186,11 @@ const listProducts = async (req, res) => {
             pizzas: productQuery,
         },
     });
+    } catch (error) {
+        res.status(500)
+        .json({ status: "error", message: "Internal server error" });
+    }
+    
 };
 
 module.exports = {
