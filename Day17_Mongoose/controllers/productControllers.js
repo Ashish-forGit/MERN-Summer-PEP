@@ -145,10 +145,10 @@ const removeProduct = async (req, res) => {
 const listProducts = async (req, res) => {
     try {
         console.log('----->',req.query);
-    const { limit = 10, q ="", fields='',page =1 ,sort="price",...filters} = req.query;
-    const selectionFields = fields.split('_');
-    const sortFields = sort.split('_').join(" ");
-    console.log(filters);
+        const { limit = 10, q ="", fields='',page =1 ,sort="price",...filters} = req.query;
+        const selectionFields = fields.split('_');
+        const sortFields = sort.split('_').join(" ");
+        console.log(filters);
     
     // filters
     // const productQuery = productModel.find(filters
@@ -158,25 +158,26 @@ const listProducts = async (req, res) => {
     // //     }
     // // }
     // );
-    let productQuery = productModel.find(filters); 
+
+        let productQuery = productModel.find(filters); 
 
     //searching functionality
-    productQuery = productQuery.where('title').regex(q);
+        productQuery = productQuery.where('title').regex(q);
 
     //reduce responsize and select specific fields
-    productQuery = productQuery.select(selectionFields)
+        productQuery = productQuery.select(selectionFields)
 
     // sorting
-    productQuery =  productQuery.sort(sortFields);
+        productQuery =  productQuery.sort(sortFields);
 
      // count the total of result documents
-     const countQuery = productQuery.clone();
-     const totalData = await countQuery.countDocuments();
+        const countQuery = productQuery.clone();
+        const totalData = await countQuery.countDocuments();
  
     //pagination
-    productQuery =  productQuery.skip((page-1) * limit);
+        productQuery =  productQuery.skip((page-1) * limit);
     //limit
-    productQuery = await productQuery.limit(limit);
+        productQuery = await productQuery.limit(limit);
 
     res.json({
         status: "success",
