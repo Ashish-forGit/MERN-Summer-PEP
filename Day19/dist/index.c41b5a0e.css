@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.homepage-root-container {
+  background-color: #ff0;
+}
+
+.homepage-nav {
+  color: #fff;
+  background-color: #131921;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  display: flex;
+}
+
+.homepage-nav > h4 {
+  width: 76px;
+}
+
+.homepage-nav > p {
+  width: 80px;
+  font-size: 12px;
+}
+
+.homepage-search-container {
+  background-color: red;
+  flex-grow: 1;
+  height: 30px;
+  display: flex;
+
+  & input {
+    flex-grow: 1;
+  }
+}
+/*# sourceMappingURL=index.c41b5a0e.css.map */
