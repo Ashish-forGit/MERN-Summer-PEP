@@ -36,4 +36,43 @@
     flex-grow: 1;
   }
 }
+
+.homepage-category-bar {
+  background-color: #222f3e;
+  align-items: center;
+  height: 40px;
+  padding: 10px 16px;
+  display: flex;
+
+  & button {
+    color: #fff;
+    background-color: #0000;
+    border: none;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    font-size: 16px;
+    display: flex;
+  }
+}
+
+.homepage-category-bar > .category-items {
+  color: #fff;
+  align-items: center;
+  gap: 16px;
+  padding: 0 12px;
+  display: flex;
+}
+
+.homepage-body > .carousal-image {
+  width: 100%;
+}
+
+.homepage-body > .products-cards-container {
+  background-color: #0ff;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0 16px;
+  display: flex;
+}
 /*# sourceMappingURL=index.c41b5a0e.css.map */
