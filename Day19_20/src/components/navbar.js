@@ -1,6 +1,9 @@
 import { IoSearchSharp } from "react-icons/io5";
 
-const Navbar = () => (
+const Navbar = (props) => {
+    const {getData} = props;
+    
+    return(
     <nav className="homepage-nav">
         <h4>Amazon.in</h4>
         <p>
@@ -10,7 +13,7 @@ const Navbar = () => (
         </p>
         <div className="homepage-search-container">
             <select />
-            <input />
+            <input type="text" onChange={getData}/>
             <button>
                 <IoSearchSharp />
             </button>
@@ -18,6 +21,7 @@ const Navbar = () => (
         <h5>Profile</h5>
         <h5>Cart</h5>
     </nav>
-);
+)
+}
 
 export default Navbar;
