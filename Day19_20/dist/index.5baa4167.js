@@ -2956,27 +2956,132 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
 var _globalStylesCss = require("./globalStyles.css");
-var _homePage = require("./src/pages/homePage");
+var _homePage = require("./src/Pages/homePage");
 var _homePageDefault = parcelHelpers.interopDefault(_homePage);
+var _amazonSearchPage = require("./src/pages/amazonSearchPage");
+var _amazonSearchPageDefault = parcelHelpers.interopDefault(_amazonSearchPage);
 const parent = document.getElementById("root");
 const root = (0, _clientDefault.default).createRoot(parent);
+const productInfoCards = [
+    {
+        id: 1,
+        title: "Revamp",
+        products: [
+            {
+                title: "Air Conditioners",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-372x232----B08RDL6H79._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Refrigerators",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B08345R1ZW---372x232._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Microwaves",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B07G5J5FYP._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Washing Machines",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08CPQVLZT._SY232_CB667322346_.jpg"
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "Revamp",
+        products: [
+            {
+                title: "Air Conditioners",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-372x232----B08RDL6H79._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Refrigerators",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B08345R1ZW---372x232._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Microwaves",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B07G5J5FYP._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Washing Machines",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08CPQVLZT._SY232_CB667322346_.jpg"
+            }
+        ]
+    },
+    {
+        id: 3,
+        title: "Revamp",
+        products: [
+            {
+                title: "Air Conditioners",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-372x232----B08RDL6H79._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Refrigerators",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B08345R1ZW---372x232._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Microwaves",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B07G5J5FYP._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Washing Machines",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08CPQVLZT._SY232_CB667322346_.jpg"
+            }
+        ]
+    },
+    {
+        id: 4,
+        title: "Revamp",
+        products: [
+            {
+                title: "Air Conditioners",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-372x232----B08RDL6H79._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Refrigerators",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B08345R1ZW---372x232._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Microwaves",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B07G5J5FYP._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Washing Machines",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08CPQVLZT._SY232_CB667322346_.jpg"
+            }
+        ]
+    }
+];
+const categories = [
+    "Fresh",
+    "Amazon MiniTV",
+    "Sell",
+    "Best Sellers",
+    "Mobiles",
+    "Todays Deals",
+    "Prime",
+    "Fashion",
+    "Electronics"
+];
 const App = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homePageDefault.default), {}, void 0, false, {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _amazonSearchPageDefault.default), {
+            categories: categories
+        }, void 0, false, {
             fileName: "app.js",
-            lineNumber: 11,
+            lineNumber: 119,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "app.js",
-        lineNumber: 10,
+        lineNumber: 114,
         columnNumber: 9
     }, undefined);
 };
 _c = App;
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 16,
+    lineNumber: 124,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -2987,7 +3092,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","react-dom/client":"lOjBx","./globalStyles.css":"1Er6p","./src/pages/homePage":"k19wx"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","react-dom/client":"lOjBx","./globalStyles.css":"1Er6p","./src/Pages/homePage":"cO71g","./src/pages/amazonSearchPage":"iq72z"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27398,11 +27503,11 @@ module.exports = require("ef03b89c8fe2794e");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"1Er6p":[function() {},{}],"k19wx":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$9eff = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{}],"1Er6p":[function() {},{}],"cO71g":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d9f7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$9eff.prelude(module);
+$parcel$ReactRefreshHelpers$d9f7.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -27412,145 +27517,115 @@ var _io5 = require("react-icons/io5");
 var _rx = require("react-icons/rx");
 var _productInfoCard = require("../components/productInfoCard");
 var _productInfoCardDefault = parcelHelpers.interopDefault(_productInfoCard);
-const categories = [
-    "Fresh",
-    "Amazon MiniTV",
-    "Sell",
-    "Best Sellers",
-    "Mobiles",
-    "Todays Deals",
-    "Prime",
-    "Fashion",
-    "Electronics"
-];
+var _navbar = require("../components/navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _categoryBar = require("../components/CategoryBar");
+var _categoryBarDefault = parcelHelpers.interopDefault(_categoryBar);
 const productInfoCards = [
     {
         id: 1,
-        title: "Revamp",
+        title: "Appliances for your home | Up to 55% off",
         products: [
             {
-                title: "Cushion",
-                img: "https://www.abc.com"
+                title: "Air Conditioners",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-372x232----B08RDL6H79._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Refrigerators",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B08345R1ZW---372x232._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Microwaves",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B07G5J5FYP._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Washing Machines",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08CPQVLZT._SY232_CB667322346_.jpg"
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "Revamp your home in style",
+        products: [
+            {
+                title: "Cushion cover",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/1x/final/186x116_Home_furnishings_2._SY116_CB555624324_.jpg"
+            },
+            {
+                title: "Refrigerators",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B08345R1ZW---372x232._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Microwaves",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B07G5J5FYP._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Washing Machines",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08CPQVLZT._SY232_CB667322346_.jpg"
+            }
+        ]
+    },
+    {
+        id: 3,
+        title: "Starting \u20B9149 | Headphones",
+        products: [
+            {
+                title: "Air Conditioners",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-372x232----B08RDL6H79._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Refrigerators",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B08345R1ZW---372x232._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Microwaves",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B07G5J5FYP._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Washing Machines",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08CPQVLZT._SY232_CB667322346_.jpg"
+            }
+        ]
+    },
+    {
+        id: 4,
+        title: "Automotive essentials | Up to 60% off",
+        products: [
+            {
+                title: "Air Conditioners",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-372x232----B08RDL6H79._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Refrigerators",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B08345R1ZW---372x232._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Microwaves",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/B07G5J5FYP._SY232_CB667322346_.jpg"
+            },
+            {
+                title: "Washing Machines",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08CPQVLZT._SY232_CB667322346_.jpg"
             }
         ]
     }
 ];
-const HomePage = ()=>{
+const HomePage = (props)=>{
+    const { data } = props;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "homepage-root-container",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
-                className: "homepage-nav",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                        children: "Amazon.in"
-                    }, void 0, false, {
-                        fileName: "src/pages/homePage.js",
-                        lineNumber: 34,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: [
-                            "Address:",
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                fileName: "src/pages/homePage.js",
-                                lineNumber: 37,
-                                columnNumber: 21
-                            }, undefined),
-                            "LPU University"
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/pages/homePage.js",
-                        lineNumber: 35,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "homepage-search-container",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {}, void 0, false, {
-                                fileName: "src/pages/homePage.js",
-                                lineNumber: 41,
-                                columnNumber: 21
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {}, void 0, false, {
-                                fileName: "src/pages/homePage.js",
-                                lineNumber: 42,
-                                columnNumber: 21
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _io5.IoSearchSharp), {}, void 0, false, {
-                                    fileName: "src/pages/homePage.js",
-                                    lineNumber: 44,
-                                    columnNumber: 25
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/pages/homePage.js",
-                                lineNumber: 43,
-                                columnNumber: 21
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/pages/homePage.js",
-                        lineNumber: 40,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
-                        children: "Profile"
-                    }, void 0, false, {
-                        fileName: "src/pages/homePage.js",
-                        lineNumber: 47,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
-                        children: "Cart"
-                    }, void 0, false, {
-                        fileName: "src/pages/homePage.js",
-                        lineNumber: 48,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/pages/homePage.js",
-                lineNumber: 33,
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {}, void 0, false, {
+                fileName: "src/Pages/homePage.js",
+                lineNumber: 104,
                 columnNumber: 13
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "homepage-category-bar",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rx.RxHamburgerMenu), {}, void 0, false, {
-                                fileName: "src/pages/homePage.js",
-                                lineNumber: 52,
-                                columnNumber: 21
-                            }, undefined),
-                            "All"
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/pages/homePage.js",
-                        lineNumber: 51,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "category-items",
-                        children: categories.map((elem)=>{
-                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                children: elem
-                            }, elem, false, {
-                                fileName: "src/pages/homePage.js",
-                                lineNumber: 57,
-                                columnNumber: 32
-                            }, undefined);
-                        })
-                    }, void 0, false, {
-                        fileName: "src/pages/homePage.js",
-                        lineNumber: 55,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/pages/homePage.js",
-                lineNumber: 50,
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _categoryBarDefault.default), {
+                props: categories
+            }, void 0, false, {
+                fileName: "src/Pages/homePage.js",
+                lineNumber: 107,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27560,36 +27635,36 @@ const HomePage = ()=>{
                         src: "https://images-eu.ssl-images-amazon.com/images/G/31/OHL/24/BAU/feb/PC_hero_1_2x_1._CB582889946_.jpg",
                         className: "carousal-image"
                     }, void 0, false, {
-                        fileName: "src/pages/homePage.js",
-                        lineNumber: 62,
+                        fileName: "src/Pages/homePage.js",
+                        lineNumber: 109,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "products-cards-container",
                         children: productInfoCards.map((elem)=>{
                             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productInfoCardDefault.default), {
-                                title: elem.title
+                                data: elem
                             }, void 0, false, {
-                                fileName: "src/pages/homePage.js",
-                                lineNumber: 68,
+                                fileName: "src/Pages/homePage.js",
+                                lineNumber: 115,
                                 columnNumber: 32
                             }, undefined);
                         })
                     }, void 0, false, {
-                        fileName: "src/pages/homePage.js",
-                        lineNumber: 66,
+                        fileName: "src/Pages/homePage.js",
+                        lineNumber: 113,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
-                fileName: "src/pages/homePage.js",
-                lineNumber: 61,
+                fileName: "src/Pages/homePage.js",
+                lineNumber: 108,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
-        fileName: "src/pages/homePage.js",
-        lineNumber: 32,
+        fileName: "src/Pages/homePage.js",
+        lineNumber: 103,
         columnNumber: 9
     }, undefined);
 };
@@ -27598,12 +27673,12 @@ exports.default = HomePage;
 var _c;
 $RefreshReg$(_c, "HomePage");
 
-  $parcel$ReactRefreshHelpers$9eff.postlude(module);
+  $parcel$ReactRefreshHelpers$d9f7.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-icons/io5":"4BQSx","react-icons/rx":"dExyH","../components/productInfoCard":"2hiXT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4BQSx":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-icons/io5":"4BQSx","react-icons/rx":"dExyH","../components/productInfoCard":"2hiXT","../components/navbar":"dtZi7","../components/CategoryBar":"icAGX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4BQSx":[function(require,module,exports) {
 // THIS FILE IS AUTO GENERATED
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -73345,14 +73420,53 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const ProductInfoCard = (obj)=>{
+const ProductInfoCard = (props)=>{
+    const { data = {} } = props;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "products-info-card",
-        children: obj.title
-    }, void 0, false, {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: data.title
+            }, void 0, false, {
+                fileName: "src/components/productInfoCard.js",
+                lineNumber: 5,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "products-item-cards-container",
+                children: data.products.map((elem)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "products-item-card",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                src: elem.img
+                            }, void 0, false, {
+                                fileName: "src/components/productInfoCard.js",
+                                lineNumber: 9,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                children: elem.title
+                            }, void 0, false, {
+                                fileName: "src/components/productInfoCard.js",
+                                lineNumber: 10,
+                                columnNumber: 25
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/productInfoCard.js",
+                        lineNumber: 8,
+                        columnNumber: 21
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/components/productInfoCard.js",
+                lineNumber: 6,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/components/productInfoCard.js",
-        lineNumber: 2,
-        columnNumber: 12
+        lineNumber: 4,
+        columnNumber: 9
     }, undefined);
 };
 _c = ProductInfoCard;
@@ -73365,6 +73479,301 @@ $RefreshReg$(_c, "ProductInfoCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequire914e")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dtZi7":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$af4a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$af4a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _io5 = require("react-icons/io5");
+const Navbar = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
+        className: "homepage-nav",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: "Amazon.in"
+            }, void 0, false, {
+                fileName: "src/components/navbar.js",
+                lineNumber: 5,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: [
+                    "Address:",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                        fileName: "src/components/navbar.js",
+                        lineNumber: 8,
+                        columnNumber: 13
+                    }, undefined),
+                    "LPU University"
+                ]
+            }, void 0, true, {
+                fileName: "src/components/navbar.js",
+                lineNumber: 6,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "homepage-search-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {}, void 0, false, {
+                        fileName: "src/components/navbar.js",
+                        lineNumber: 12,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {}, void 0, false, {
+                        fileName: "src/components/navbar.js",
+                        lineNumber: 13,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _io5.IoSearchSharp), {}, void 0, false, {
+                            fileName: "src/components/navbar.js",
+                            lineNumber: 15,
+                            columnNumber: 17
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/navbar.js",
+                        lineNumber: 14,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/navbar.js",
+                lineNumber: 11,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                children: "Profile"
+            }, void 0, false, {
+                fileName: "src/components/navbar.js",
+                lineNumber: 18,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                children: "Cart"
+            }, void 0, false, {
+                fileName: "src/components/navbar.js",
+                lineNumber: 19,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/navbar.js",
+        lineNumber: 4,
+        columnNumber: 5
+    }, undefined);
+_c = Navbar;
+exports.default = Navbar;
+var _c;
+$RefreshReg$(_c, "Navbar");
+
+  $parcel$ReactRefreshHelpers$af4a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-icons/io5":"4BQSx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"icAGX":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6ef0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6ef0.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _rx = require("react-icons/rx");
+const CategoryBar = (props)=>{
+    const { categories } = props;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "homepage-category-bar",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rx.RxHamburgerMenu), {}, void 0, false, {
+                        fileName: "src/components/CategoryBar.js",
+                        lineNumber: 8,
+                        columnNumber: 17
+                    }, undefined),
+                    "All"
+                ]
+            }, void 0, true, {
+                fileName: "src/components/CategoryBar.js",
+                lineNumber: 7,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "category-items",
+                children: categories.map((elem)=>{
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: elem
+                    }, elem, false, {
+                        fileName: "src/components/CategoryBar.js",
+                        lineNumber: 13,
+                        columnNumber: 28
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "src/components/CategoryBar.js",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/CategoryBar.js",
+        lineNumber: 6,
+        columnNumber: 9
+    }, undefined);
+};
+_c = CategoryBar;
+exports.default = CategoryBar;
+var _c;
+$RefreshReg$(_c, "CategoryBar");
+
+  $parcel$ReactRefreshHelpers$6ef0.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-icons/rx":"dExyH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iq72z":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9f0c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9f0c.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _categoryBar = require("../components/categoryBar");
+var _categoryBarDefault = parcelHelpers.interopDefault(_categoryBar);
+var _navbar = require("../components/navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+const SearchPage = (props)=>{
+    const { categories } = props;
+    const customStyles = {
+        padding: "48px",
+        textAlign: "center",
+        backgroundColor: "Yellow"
+    };
+    let searchText = "";
+    console.log("initially: ", searchText);
+    const handleSearch = (e)=>{
+        const val = e.target.value;
+        console.log(val);
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {}, void 0, false, {
+                fileName: "src/pages/amazonSearchPage.js",
+                lineNumber: 23,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _categoryBarDefault.default), {
+                categories: categories
+            }, void 0, false, {
+                fileName: "src/pages/amazonSearchPage.js",
+                lineNumber: 24,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                style: customStyles,
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    type: "text",
+                    onChange: handleSearch
+                }, void 0, false, {
+                    fileName: "src/pages/amazonSearchPage.js",
+                    lineNumber: 26,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/pages/amazonSearchPage.js",
+                lineNumber: 25,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/pages/amazonSearchPage.js",
+        lineNumber: 22,
+        columnNumber: 9
+    }, undefined);
+};
+_c = SearchPage;
+exports.default = SearchPage;
+var _c;
+$RefreshReg$(_c, "SearchPage");
+
+  $parcel$ReactRefreshHelpers$9f0c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../components/navbar":"dtZi7","../components/categoryBar":"gEUHS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gEUHS":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$210f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$210f.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _rx = require("react-icons/rx");
+const CategoryBar = (props)=>{
+    const { categories } = props;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "homepage-category-bar",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rx.RxHamburgerMenu), {}, void 0, false, {
+                        fileName: "src/components/categoryBar.js",
+                        lineNumber: 8,
+                        columnNumber: 17
+                    }, undefined),
+                    "All"
+                ]
+            }, void 0, true, {
+                fileName: "src/components/categoryBar.js",
+                lineNumber: 7,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "category-items",
+                children: categories.map((elem)=>{
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: elem
+                    }, elem, false, {
+                        fileName: "src/components/categoryBar.js",
+                        lineNumber: 13,
+                        columnNumber: 28
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "src/components/categoryBar.js",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/categoryBar.js",
+        lineNumber: 6,
+        columnNumber: 9
+    }, undefined);
+};
+_c = CategoryBar;
+exports.default = CategoryBar;
+var _c;
+$RefreshReg$(_c, "CategoryBar");
+
+  $parcel$ReactRefreshHelpers$210f.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-icons/rx":"dExyH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequire914e")
 
 //# sourceMappingURL=index.5baa4167.js.map
