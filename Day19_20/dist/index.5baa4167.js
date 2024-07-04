@@ -73489,9 +73489,15 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 var _io5 = require("react-icons/io5");
-const Navbar = (props)=>{
-    const { getData } = props;
+const Navbar = ({ setSearchText, getData })=>{
+    const handleSearch = (e)=>{
+        const searchText = e.target.value;
+        setSearchText(searchText);
+        getData(searchText);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
         className: "homepage-nav",
         children: [
@@ -73499,76 +73505,76 @@ const Navbar = (props)=>{
                 children: "Amazon.in"
             }, void 0, false, {
                 fileName: "src/components/navbar.js",
-                lineNumber: 8,
-                columnNumber: 9
+                lineNumber: 13,
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 children: [
                     "Address:",
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                         fileName: "src/components/navbar.js",
-                        lineNumber: 11,
-                        columnNumber: 13
+                        lineNumber: 16,
+                        columnNumber: 17
                     }, undefined),
                     "LPU University"
                 ]
             }, void 0, true, {
                 fileName: "src/components/navbar.js",
-                lineNumber: 9,
-                columnNumber: 9
+                lineNumber: 14,
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "homepage-search-container",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {}, void 0, false, {
                         fileName: "src/components/navbar.js",
-                        lineNumber: 15,
-                        columnNumber: 13
+                        lineNumber: 20,
+                        columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                         type: "text",
-                        onChange: getData
+                        onChange: handleSearch
                     }, void 0, false, {
                         fileName: "src/components/navbar.js",
-                        lineNumber: 16,
-                        columnNumber: 13
+                        lineNumber: 21,
+                        columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _io5.IoSearchSharp), {}, void 0, false, {
                             fileName: "src/components/navbar.js",
-                            lineNumber: 18,
-                            columnNumber: 17
+                            lineNumber: 23,
+                            columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/navbar.js",
-                        lineNumber: 17,
-                        columnNumber: 13
+                        lineNumber: 22,
+                        columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/navbar.js",
-                lineNumber: 14,
-                columnNumber: 9
+                lineNumber: 19,
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
                 children: "Profile"
             }, void 0, false, {
                 fileName: "src/components/navbar.js",
-                lineNumber: 21,
-                columnNumber: 9
+                lineNumber: 26,
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
                 children: "Cart"
             }, void 0, false, {
                 fileName: "src/components/navbar.js",
-                lineNumber: 22,
-                columnNumber: 9
+                lineNumber: 27,
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/navbar.js",
-        lineNumber: 7,
-        columnNumber: 5
+        lineNumber: 12,
+        columnNumber: 9
     }, undefined);
 };
 _c = Navbar;
@@ -73581,7 +73587,7 @@ $RefreshReg$(_c, "Navbar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react-icons/io5":"4BQSx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gEUHS":[function(require,module,exports) {
+},{"react-icons/io5":"4BQSx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"gEUHS":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$210f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -73654,83 +73660,169 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _categoryBar = require("../components/categoryBar");
-var _categoryBarDefault = parcelHelpers.interopDefault(_categoryBar);
-var _navbar = require("../components/navbar");
-var _navbarDefault = parcelHelpers.interopDefault(_navbar);
 var _react = require("react");
+var _categoryBar = require("../components/CategoryBar");
+var _categoryBarDefault = parcelHelpers.interopDefault(_categoryBar);
+var _navbarJs = require("../components/navbar.js");
+var _navbarJsDefault = parcelHelpers.interopDefault(_navbarJs);
 var _s = $RefreshSig$();
 const SearchPage = (props)=>{
     _s();
     const { categories } = props;
-    const customStyles = {
-        padding: "48px",
-        textAlign: "center",
-        backgroundColor: "Yellow"
-    };
+    const [searchText, setSearchText] = (0, _react.useState)("");
     const [products, setProducts] = (0, _react.useState)([]);
-    async function getData(e) {
-        const val = e.target.value;
-        const res = await fetch(`https://dummyjson.com/products/search?q=${val}`);
+    async function getData(searchText) {
+        const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
         const data = await res.json();
         setProducts(data.products);
-        console.log("Api called");
+        console.log("API! Called");
     }
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarJsDefault.default), {
+                setSearchText: setSearchText,
                 getData: getData
             }, void 0, false, {
                 fileName: "src/pages/amazonSearchPage.js",
-                lineNumber: 30,
+                lineNumber: 21,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _categoryBarDefault.default), {
                 categories: categories
             }, void 0, false, {
                 fileName: "src/pages/amazonSearchPage.js",
-                lineNumber: 31,
+                lineNumber: 22,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                style: customStyles,
+                className: "products-container",
                 children: products.map((elem)=>{
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "product-card",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                children: elem.title
-                            }, void 0, false, {
-                                fileName: "src/pages/amazonSearchPage.js",
-                                lineNumber: 36,
-                                columnNumber: 25
-                            }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                src: elem.thumbnail
+                                src: elem.thumbnail,
+                                alt: elem.title,
+                                className: "product-image"
                             }, void 0, false, {
                                 fileName: "src/pages/amazonSearchPage.js",
-                                lineNumber: 37,
-                                columnNumber: 25
+                                lineNumber: 27,
+                                columnNumber: 29
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "product-info",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                        className: "product-title",
+                                        children: elem.title
+                                    }, void 0, false, {
+                                        fileName: "src/pages/amazonSearchPage.js",
+                                        lineNumber: 29,
+                                        columnNumber: 33
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "product-description",
+                                        children: elem.description
+                                    }, void 0, false, {
+                                        fileName: "src/pages/amazonSearchPage.js",
+                                        lineNumber: 30,
+                                        columnNumber: 33
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "product-rating",
+                                        children: [
+                                            Array.from({
+                                                length: Math.round(elem.rating)
+                                            }).map((_, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    children: "\u2605"
+                                                }, index, false, {
+                                                    fileName: "src/pages/amazonSearchPage.js",
+                                                    lineNumber: 33,
+                                                    columnNumber: 41
+                                                }, undefined)),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "rating-count",
+                                                children: [
+                                                    elem.rating,
+                                                    " out of 5 stars"
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/pages/amazonSearchPage.js",
+                                                lineNumber: 35,
+                                                columnNumber: 37
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/pages/amazonSearchPage.js",
+                                        lineNumber: 31,
+                                        columnNumber: 33
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "product-price",
+                                        children: [
+                                            "\u20B9",
+                                            elem.price
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/pages/amazonSearchPage.js",
+                                        lineNumber: 37,
+                                        columnNumber: 33
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "product-discount",
+                                        children: [
+                                            "M.R.P: \u20B9",
+                                            elem.mrp,
+                                            " (",
+                                            elem.discount,
+                                            "% off)"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/pages/amazonSearchPage.js",
+                                        lineNumber: 38,
+                                        columnNumber: 33
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "product-delivery",
+                                        children: [
+                                            "FREE delivery ",
+                                            elem.deliveryDate
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/pages/amazonSearchPage.js",
+                                        lineNumber: 39,
+                                        columnNumber: 33
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                        className: "add-to-cart-button",
+                                        children: "Add to cart"
+                                    }, void 0, false, {
+                                        fileName: "src/pages/amazonSearchPage.js",
+                                        lineNumber: 40,
+                                        columnNumber: 33
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/pages/amazonSearchPage.js",
+                                lineNumber: 28,
+                                columnNumber: 29
                             }, undefined)
                         ]
                     }, elem.id, true, {
                         fileName: "src/pages/amazonSearchPage.js",
-                        lineNumber: 35,
-                        columnNumber: 21
+                        lineNumber: 26,
+                        columnNumber: 25
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/pages/amazonSearchPage.js",
-                lineNumber: 32,
+                lineNumber: 23,
                 columnNumber: 13
             }, undefined)
         ]
-    }, void 0, true, {
-        fileName: "src/pages/amazonSearchPage.js",
-        lineNumber: 29,
-        columnNumber: 9
-    }, undefined);
+    }, void 0, true);
 };
-_s(SearchPage, "/ZAmBmUKriWz3XDcp0xu079Wyow=");
+_s(SearchPage, "KdbL6dfc7wDBGitfOCZhxlFHLQ4=");
 _c = SearchPage;
 exports.default = SearchPage;
 var _c;
@@ -73741,6 +73833,69 @@ $RefreshReg$(_c, "SearchPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../components/categoryBar":"gEUHS","../components/navbar":"dtZi7","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequire914e")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../components/CategoryBar":"icAGX","../components/navbar.js":"dtZi7"}],"icAGX":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6ef0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6ef0.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _rx = require("react-icons/rx");
+const CategoryBar = (props)=>{
+    const { categories } = props;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "homepage-category-bar",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rx.RxHamburgerMenu), {}, void 0, false, {
+                        fileName: "src/components/CategoryBar.js",
+                        lineNumber: 8,
+                        columnNumber: 17
+                    }, undefined),
+                    "All"
+                ]
+            }, void 0, true, {
+                fileName: "src/components/CategoryBar.js",
+                lineNumber: 7,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "category-items",
+                children: categories.map((elem)=>{
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: elem
+                    }, elem, false, {
+                        fileName: "src/components/CategoryBar.js",
+                        lineNumber: 13,
+                        columnNumber: 28
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "src/components/CategoryBar.js",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/CategoryBar.js",
+        lineNumber: 6,
+        columnNumber: 9
+    }, undefined);
+};
+_c = CategoryBar;
+exports.default = CategoryBar;
+var _c;
+$RefreshReg$(_c, "CategoryBar");
+
+  $parcel$ReactRefreshHelpers$6ef0.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-icons/rx":"dExyH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequire914e")
 
 //# sourceMappingURL=index.5baa4167.js.map

@@ -27,7 +27,6 @@
 }
 
 .homepage-search-container {
-  background-color: red;
   flex-grow: 1;
   height: 30px;
   display: flex;
@@ -103,5 +102,146 @@
       }
     }
   }
+}
+
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.products-container {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  display: flex;
+}
+
+.product-card {
+  text-align: left;
+  background-color: #fff;
+  border-radius: 8px;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 15px;
+  transition: transform .2s;
+  display: flex;
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+}
+
+.product-image {
+  object-fit: cover;
+  border-radius: 8px;
+  width: 150px;
+  height: 150px;
+}
+
+.product-info {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+}
+
+.product-title {
+  color: #007185;
+  cursor: pointer;
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.product-description {
+  color: #555;
+  text-overflow: ellipsis;
+  height: 60px;
+  margin: 10px 0;
+  font-size: .9em;
+  overflow: hidden;
+}
+
+.product-rating {
+  color: #f0c14b;
+  align-items: center;
+  margin: 5px 0;
+  display: flex;
+}
+
+.rating-count {
+  color: #555;
+  margin-left: 5px;
+  font-size: .9em;
+}
+
+.product-price {
+  color: #b12704;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.product-discount, .product-delivery {
+  color: #565959;
+  font-size: .9em;
+}
+
+.add-to-cart-button {
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  background-color: #ffa41c;
+  border: none;
+  border-radius: 4px;
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  font-size: 1em;
+  position: relative;
+  top: 5px;
+  bottom: 20px;
+  left: 880px;
+}
+
+.add-to-cart-button:hover {
+  background-color: #ff8c00;
+}
+
+.homepage-nav {
+  color: #fff;
+  background-color: #232f3e;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  display: flex;
+}
+
+.homepage-search-container {
+  align-items: center;
+  display: flex;
+}
+
+.homepage-search-container input {
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 1em;
+}
+
+.homepage-search-container button {
+  cursor: pointer;
+  background-color: #febd69;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.homepage-search-container button:hover {
+  background-color: #f3a847;
 }
 /*# sourceMappingURL=index.c41b5a0e.css.map */
