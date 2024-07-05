@@ -1,30 +1,39 @@
 import React from "react";
 import { IoSearchSharp } from "react-icons/io5";
+import { FaLocationDot } from "react-icons/fa6";
+import { BsAmazon } from "react-icons/bs";
+import { FaUser } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
-const Navbar = ({ setSearchText, getData }) => {
+const Navbar = ({ setSearchText }) => {
     const handleSearch = (e) => {
-        const searchText = e.target.value;
-        setSearchText(searchText);
-        getData(searchText);
+        setSearchText(e.target.value);
     };
 
     return (
         <nav className="homepage-nav">
-            <h4>Amazon.in</h4>
+            <BsAmazon />
+            <h4>Amazon.in </h4>
             <p>
+            <FaLocationDot />
                 Address:
                 <br />
                 LPU University
             </p>
             <div className="homepage-search-container">
-                <select />
+                <select className="category-select">
+                    <option value="">All</option>
+                    <option value="electronics">Electric</option>
+                    <option value="books">Books</option>
+                    {/* Add more categories as needed */}
+                </select>
                 <input type="text" onChange={handleSearch} />
                 <button>
                     <IoSearchSharp />
                 </button>
             </div>
-            <h5>Profile</h5>
-            <h5>Cart</h5>
+            <h4><FaUser /> Profile</h4>
+            <h4><FaShoppingCart /> Cart</h4>
         </nav>
     );
 };

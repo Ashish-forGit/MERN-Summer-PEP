@@ -19,6 +19,7 @@
 
 .homepage-nav>h4{
     width: 76px;
+    font-size: 17px;
 }
 .homepage-nav>p{
     width: 80px;
@@ -32,6 +33,12 @@
 
     input{
         flex-grow: 1;
+    }
+
+    select{
+        height: 30px;
+        background-color: #e6e6e6;
+        border-radius: 5px;
     }
 }
 
@@ -251,4 +258,7 @@ body {
 .homepage-search-container button:hover {
     background-color: #f3a847;
 }
+
+
+
 

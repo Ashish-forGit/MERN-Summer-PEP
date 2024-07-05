@@ -19,6 +19,7 @@
 
 .homepage-nav > h4 {
   width: 76px;
+  font-size: 17px;
 }
 
 .homepage-nav > p {
@@ -33,6 +34,12 @@
 
   & input {
     flex-grow: 1;
+  }
+
+  & select {
+    background-color: #e6e6e6;
+    border-radius: 5px;
+    height: 30px;
   }
 }
 
