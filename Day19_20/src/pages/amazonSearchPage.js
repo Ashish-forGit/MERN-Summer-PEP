@@ -18,7 +18,21 @@ const SearchPage = (props) => {
             };
             fetchProducts();
         }
+        
     }, [searchText]);
+
+    useEffect(() => {
+        
+        const fetchProducts = async () => {
+                const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
+                const data = await res.json();
+                setProducts(data.products);
+                console.log("API called with search text:", searchText);
+        }
+        fetchProducts();    
+    }, []);
+
+    
 
     return (
         <>
