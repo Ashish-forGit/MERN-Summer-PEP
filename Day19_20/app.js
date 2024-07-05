@@ -131,7 +131,7 @@ const App = () => {
             path: '/search',
             element: <SearchPage searchText={searchText} 
                 setSearchText={setSearchText} 
-                categories = {categories}/>
+                categories = {categories} />
         },
     ]);
 
