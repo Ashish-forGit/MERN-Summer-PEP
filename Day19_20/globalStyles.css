@@ -5,7 +5,7 @@
 }
 
 .homepage-root-container{
-    background-color: yellow;
+    background-color: #e3e6e6
 }
 
 .homepage-nav{
@@ -18,12 +18,13 @@
 }
 
 .homepage-nav>h4{
-    width: 76px;
-    font-size: 17px;
+    width: 70px;
+    font-size: 15px;
 }
 .homepage-nav>p{
     width: 80px;
-    font-size: 12px;
+    font-size: 10px;
+    
 }
 .homepage-search-container{
     flex-grow: 1;
@@ -89,7 +90,7 @@
     padding: 12px 16px;
 
     h3{
-        font-size: 18px;
+        font-size: 15px;
         margin-bottom: 6px;
     }
 

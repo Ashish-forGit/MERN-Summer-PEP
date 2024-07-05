@@ -4,31 +4,21 @@ import Navbar from "../components/navbar";
 
 
 const SearchPage = (props) => {
-    const { categories } = props;
-    const [searchText, setSearchText] = useState("");
+    const { categories ,searchText, setSearchText} = props;
     const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        if (searchText) {
-            const fetchProducts = async () => {
-                const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
-                const data = await res.json();
-                setProducts(data.products);
-                console.log("API called with search text:", searchText);
-            };
-            fetchProducts();
-        }
-        
+    const fetchProducts = async () => {
+        const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
+        const data = await res.json();
+        setProducts(data.products);
+        console.log("API called with search text:", searchText);
+    };
+
+    useEffect(() => {      
+        fetchProducts();
     }, [searchText]);
 
     useEffect(() => {
-        
-        const fetchProducts = async () => {
-                const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
-                const data = await res.json();
-                setProducts(data.products);
-                console.log("API called with search text:", searchText);
-        }
         fetchProducts();    
     }, []);
 
