@@ -4,16 +4,22 @@ import { FaLocationDot } from "react-icons/fa6";
 import { BsAmazon } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ setSearchText, openSearchPage }) => {
     const handleSearch = (e) => {
         setSearchText(e.target.value);
     };
 
+    const navigate = useNavigate();
+    const openHomePage = ()=>{
+        navigate("/");
+    }
+
     return (
         <nav className="homepage-nav">
             <BsAmazon />
-            <h4>Amazon.in </h4>
+            <h4 className="title-h4" onClick={openHomePage}>Amazon.in </h4>
             <p>
             <FaLocationDot />
                 Address:

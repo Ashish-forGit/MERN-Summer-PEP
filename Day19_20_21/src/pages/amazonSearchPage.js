@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CategoryBar from "../components/CategoryBar";
 import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
 import { useNavigate } from "react-router-dom";
 
 
@@ -18,6 +19,7 @@ const SearchPage = ({ categories, searchText, setSearchText }) => {
         const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
         const data = await res.json();
         setProducts(data.products);
+        
         setLoading(false);
         console.log("API called with search text:", searchText);
     };
@@ -55,6 +57,7 @@ const SearchPage = ({ categories, searchText, setSearchText }) => {
                     ))}
                 </div>
             )}
+            <Footer/>
         </>
     );
 };

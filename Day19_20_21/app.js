@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import "./globalStyles.css";
-import HomePage from "./src/Pages/homePage";
+import HomePage from "./src/pages/homePage";
 import SearchPage from "./src/pages/amazonSearchPage";
 import ProductInfo from "./src/pages/productInfo";
 import { useState } from "react";
@@ -103,6 +103,10 @@ const productInfoCards = [
         ],
     },
 ];
+
+
+
+
 
 const categories = [
     "Fresh",

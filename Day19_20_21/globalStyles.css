@@ -20,6 +20,11 @@
 .homepage-nav>h4{
     width: 70px;
     font-size: 15px;
+    cursor: pointer;
+}
+.title-h4{
+    cursor: pointer;
+
 }
 .homepage-nav>p{
     width: 80px;
@@ -49,6 +54,7 @@
     height: 40px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     button{
         display: flex;
@@ -69,7 +75,9 @@
       color: white;
       padding: 0 12px;
 }
-
+.homepage-body{
+    height: 1400px;
+}
 .homepage-body>.carousal-image{
     width: 100%;
 }
@@ -77,10 +85,19 @@
 .homepage-body>.products-cards-container{
     top: -320px;
     position: relative;
-    margin: 0 16px;
+    margin: 0 8px;
     display: flex;
     align-items: flex-start;
     gap: 16px;
+}
+
+.more-products-cards-container{
+    position: relative;
+    top: -300px;
+    margin: 20px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px
 }
 
 .products-info-card{
@@ -110,6 +127,15 @@
         }
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 /* SearchPage.css */
@@ -262,3 +288,68 @@ body {
 
 
 
+.footer {
+    
+    background-color: #16171a;
+    padding: 30px 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-p1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col {
+    flex: 1;
+    max-width: 200px;
+    margin: 20px;
+    color: white;
+}
+.col>a{
+    border: none;
+}
+.col.install {
+    max-width: 300px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.icon {
+    margin-top: 10px;
+}
+
+.icon i {
+    margin: 0 5px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.install img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #888;
+}

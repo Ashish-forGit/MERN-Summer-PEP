@@ -18,8 +18,13 @@
 }
 
 .homepage-nav > h4 {
+  cursor: pointer;
   width: 70px;
   font-size: 15px;
+}
+
+.title-h4 {
+  cursor: pointer;
 }
 
 .homepage-nav > p {
@@ -44,6 +49,7 @@
 }
 
 .homepage-category-bar {
+  cursor: pointer;
   background-color: #222f3e;
   align-items: center;
   height: 40px;
@@ -70,6 +76,10 @@
   display: flex;
 }
 
+.homepage-body {
+  height: 1400px;
+}
+
 .homepage-body > .carousal-image {
   width: 100%;
 }
@@ -77,10 +87,19 @@
 .homepage-body > .products-cards-container {
   align-items: flex-start;
   gap: 16px;
-  margin: 0 16px;
+  margin: 0 8px;
   display: flex;
   position: relative;
   top: -320px;
+}
+
+.more-products-cards-container {
+  align-items: flex-start;
+  gap: 16px;
+  margin: 20px 16px;
+  display: flex;
+  position: relative;
+  top: -300px;
 }
 
 .products-info-card {
@@ -240,6 +259,73 @@ body {
 
 .homepage-search-container button:hover {
   background-color: #f3a847;
+}
+
+.footer {
+  text-align: center;
+  background-color: #16171a;
+  border-top: 1px solid #ddd;
+  padding: 30px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-p1 {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  display: flex;
+}
+
+.col {
+  color: #fff;
+  flex: 1;
+  max-width: 200px;
+  margin: 20px;
+}
+
+.col > a {
+  border: none;
+}
+
+.col.install {
+  max-width: 300px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.icon {
+  margin-top: 10px;
+}
+
+.icon i {
+  color: #333;
+  margin: 0 5px;
+  font-size: 1.5rem;
+}
+
+.row {
+  justify-content: space-between;
+  margin: 10px 0;
+  display: flex;
+}
+
+.install img {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.copyright {
+  color: #888;
+  margin-top: 20px;
+  font-size: .8rem;
 }
 
 .page-container {

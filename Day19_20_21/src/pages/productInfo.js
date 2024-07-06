@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/navbar";
 import CategoryBar from "../components/categoryBar";
+import Footer from "../components/footer";
 import '../../productInfo.css';
 import { useNavigate } from "react-router-dom"; 
 
@@ -47,6 +48,7 @@ const ProductInfo = ({ setSearchText, categories, searchText }) => {
                     <button className="add-to-cart-button-info">Buy</button>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 };

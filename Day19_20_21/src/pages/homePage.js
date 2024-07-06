@@ -3,11 +3,13 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import ProductInfoCard from "../components/productInfoCard";
 import Navbar from "../components/navbar";
 import CategoryBar from "../components/categoryBar";
+import Footer from "../components/footer";
 import { useNavigate } from "react-router-dom";
 
 
+
 const HomePage = (props) => {
-    const { productInfoCards, categories, setSearchText } = props;
+    const { productInfoCards, categories, setSearchText,  } = props;
 
     const navigate = useNavigate();
     const openSearchPage = ()=>{
@@ -28,9 +30,26 @@ const HomePage = (props) => {
                         return <ProductInfoCard data={elem} />;
                     })}
                 </div>
+                <div className="more-products-cards-container">
+                    {productInfoCards.map((elem) => {
+                        return <ProductInfoCard data={elem} />;
+                    })}
+                </div>
+                <div className="more-products-cards-container">
+                    {productInfoCards.map((elem) => {
+                        return <ProductInfoCard data={elem} />;
+                    })}
+                </div>
+                
+                
+                
             </div>
+            <Footer />
             
+           
         </div>
+        
+
     );
 };
 
