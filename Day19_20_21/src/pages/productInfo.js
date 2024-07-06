@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import Navbar from "../components/navbar";
-import CategoryBar from "../components/categoryBar";
+import Navbar from "../components/Navbar";
+import CategoryBar from "../components/CategoryBar";
 import Footer from "../components/footer";
 import '../../productInfo.css';
-import { useNavigate } from "react-router-dom"; 
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+
+
+
 
 const ProductInfo = ({ setSearchText, categories, searchText }) => {
     const { id } = useParams();
