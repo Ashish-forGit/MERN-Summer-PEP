@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import CategoryBar from "../components/CategoryBar";
-import Navbar from "../components/Navbar";
-import Footer from "../components/footer";
+
+import CategoryBar from "../components/categoryBar";
+import Navbar from "../components/navbar";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/footer";
 
 
 const SearchPage = ({ categories, searchText, setSearchText }) => {

@@ -1,8 +1,8 @@
 import { IoSearchSharp } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
-import ProductInfoCard from "../components/ProductInfoCard";
-import Navbar from "../components/Navbar";
-import CategoryBar from "../components/CategoryBar";
+import ProductInfoCard from "../components/productInfoCard";
+import Navbar from "../components/navbar";
+import CategoryBar from "../components/categoryBar";
 import Footer from "../components/footer";
 
 import { useNavigate } from "react-router-dom";

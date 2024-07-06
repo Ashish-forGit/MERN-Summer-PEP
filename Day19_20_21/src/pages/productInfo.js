@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar";
-import CategoryBar from "../components/CategoryBar";
+import Navbar from "../components/navbar";
+import CategoryBar from "../components/categoryBar";
 import Footer from "../components/footer";
 import '../../productInfo.css';
 import { useState, useEffect } from "react";
