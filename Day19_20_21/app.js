@@ -104,6 +104,187 @@ const productInfoCards = [
     },
 ];
 
+const moreproductInfoCards = [
+    {
+        id: 1,
+        title: "Keep Shoping for",
+        products: [
+            {
+                title: "Urban Indy",
+                img: "https://m.media-amazon.com/images/I/61jfwppyIXL._SY741_.jpg",
+            },
+            {
+                title: "Mens Solid Cotten",
+                img: "https://m.media-amazon.com/images/I/41eCap87ZuL._SX679_.jpg",
+            },
+            {
+                title: "The Modern Soul",
+                img: "https://m.media-amazon.com/images/I/612kLKWfZ2L._SY741_.jpg",
+            },
+            {
+                title: "Lymio Men Cargo",
+                img: "https://m.media-amazon.com/images/I/31mTwKMJb7L.jpg",
+            },
+        ],
+    },
+    {
+        id: 2,
+        title: "Up to 60% off| Top picks",
+        products: [
+            {
+                title: "Sports Shoes",
+                img: "https://m.media-amazon.com/images/I/61utX8kBDlL._SY575_.jpg",
+            },
+            {
+                title: "Jewellery & accessories",
+                img: "https://m.media-amazon.com/images/I/61Cy7OxJO5L._SL1000_.jpg",
+            },
+            {
+                title: "Watches",
+                img: "https://m.media-amazon.com/images/I/71kxX+vFv+L._SL1500_.jpg",
+            },
+            {
+                title: "Bags luggage",
+                img: "https://m.media-amazon.com/images/I/51zlPiGC1HL._SL1499_.jpg",
+            },
+        ],
+    },
+    {
+        id: 3,
+        title: "Fruits & vegetables",
+        products: [
+            {
+                title: "Fruits",
+                img: "https://m.media-amazon.com/images/I/61CuiyI4aBL._SL1500_.jpg",
+            },
+            {
+                title: "Vegetables",
+                img: "https://m.media-amazon.com/images/I/41Pi5dfvOoL._SX522_.jpg",
+            },
+            {
+                title: "Seasons's special",
+                img: "https://m.media-amazon.com/images/I/71ZaS7W9dYL._SL1500_.jpg",
+            },
+            {
+                title: "visit the store",
+                img: "https://m.media-amazon.com/images/I/41RSmlJ7pwL.jpg",
+            },
+        ],
+    },
+    {
+        id: 4,
+        title: "Brands in focus",
+        products: [
+            {
+                title: "Smart phone",
+                img: "https://m.media-amazon.com/images/I/61nxQ62qglL._SL1500_.jpg",
+            },
+            {
+                title: "Laptop",
+                img: "https://m.media-amazon.com/images/I/81epBowa4UL._SL1500_.jpg",
+            },
+            {
+                title: "Sanitary Pad",
+                img: "https://m.media-amazon.com/images/I/71cvryHR3zL._SL1500_.jpg",
+            },
+            {
+                title: "Detergent",
+                img: "https://m.media-amazon.com/images/I/719ch00KweL._SL1500_.jpg",
+            },
+        ],
+    },
+];
+const extraproductInfoCards = [
+    {
+        id: 1,
+        title: "Best Sellers in Home & Kitchen",
+        products: [
+            {
+                title: "",
+                img: "https://m.media-amazon.com/images/I/71IB+2LNNBL._SL1500_.jpg",
+            },
+            {
+                title: "",
+                img: "https://m.media-amazon.com/images/I/410a9N3gxpL._SL1024_.jpg",
+            },
+            {
+                title: "",
+                img: "https://m.media-amazon.com/images/I/6121tV2hW9L._SL1500_.jpg",
+            },
+            {
+                title: "",
+                img: "https://m.media-amazon.com/images/I/518qYT-OjaL._SL1000_.jpg",
+            },
+        ],
+    },
+    {
+        id: 2,
+        title: "Pocket-friendly fashion",
+        products: [
+            {
+                title: "",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/img18/apparel/wave3/men/postw3/GW/Brand-QC-withoutCopy-420x420-under599-7.jpg",
+            },
+            {
+                title: "",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC-PFF/PFF-3-186-116._SY116_CB636055991_.jpg",
+            },
+            {
+                title: "",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC-PFF/PFF-2-186-116._SY116_CB636055991_.jpg",
+            },
+            {
+                title: "",
+                img: "https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC-PFF/PFF-4-186-116._SY116_CB636055991_.jpg",
+            },
+        ],
+    },
+    {
+        id: 3,
+        title: "Customers’ Most-Loved products",
+        products: [
+            {
+                title: "",
+                img: "https://m.media-amazon.com/images/I/41jc30L1jyL._AC_SY145_.jpg",
+            },
+            {
+                title: "",
+                img: "https://m.media-amazon.com/images/I/61P8rRWzXUL._AC_SY145_.jpg",
+            },
+            {
+                title: "",
+                img: "https://m.media-amazon.com/images/I/71-z6ji5R+L._AC_SY145_.jpg",
+            },
+            {
+                title: "",
+                img: "https://m.media-amazon.com/images/I/71MNc4aeG8L._AC_SY145_.jpg",
+            },
+        ],
+    },
+    {
+        id: 4,
+        title: "Customers’ Most-Loved Fashion for you",
+        products: [
+            {
+                title: "",
+                img: "https://m.media-amazon.com/images/I/616iBhe2roL._AC_SY145_.jpg",
+            },
+            {
+                title: "",
+                img: "https://m.media-amazon.com/images/I/71eUwDk8z+L._AC_SY145_.jpg",
+            },
+            {
+                title: " ",
+                img: "https://m.media-amazon.com/images/I/616RCgaeZ4L._AC_SY145_.jpg",
+            },
+            {
+                title: "",
+                img: "https://m.media-amazon.com/images/I/61dtCfEcB+L._AC_SY145_.jpg",
+            },
+        ],
+    },
+];
+
 
 
 
@@ -130,6 +311,8 @@ const App = () => {
             element: <HomePage searchText={searchText}
                 setSearchText={setSearchText} 
                 productInfoCards = {productInfoCards} 
+                moreproductInfoCards={moreproductInfoCards}
+                extraproductInfoCards={extraproductInfoCards}
                 categories ={categories} />
         },
         {

@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const HomePage = (props) => {
-    const { productInfoCards, categories, setSearchText,  } = props;
+    const { productInfoCards, categories, setSearchText, moreproductInfoCards, extraproductInfoCards } = props;
 
     const navigate = useNavigate();
     const openSearchPage = ()=>{
@@ -33,12 +33,12 @@ const HomePage = (props) => {
                     })}
                 </div>
                 <div className="more-products-cards-container">
-                    {productInfoCards.map((elem) => {
+                    {moreproductInfoCards.map((elem) => {
                         return <ProductInfoCard data={elem} />;
                     })}
                 </div>
                 <div className="more-products-cards-container">
-                    {productInfoCards.map((elem) => {
+                    {extraproductInfoCards.map((elem) => {
                         return <ProductInfoCard data={elem} />;
                     })}
                 </div>
