@@ -20,9 +20,10 @@ const Footer = () => {
                         <img className="logo" src="img/logo.png" alt=""/>
                         <h4>Contact</h4>
                         <p><strong>Address:</strong> Lovely Professonal University, Phagwara, Punjab, India</p>
-                        <p><strong>Phone:</strong> (+91) 70 61XX XX89</p>
+                        
                         <p><strong>Email:</strong> info@amazon.in</p>
-                        <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+                         <br/>
+                        
                         <div className="follow">
                             <h4>Follow us</h4>
                             <div className="icon">

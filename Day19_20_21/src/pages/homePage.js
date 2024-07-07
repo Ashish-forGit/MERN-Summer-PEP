@@ -27,17 +27,17 @@ const HomePage = (props) => {
                     src="https://images-eu.ssl-images-amazon.com/images/G/31/OHL/24/BAU/feb/PC_hero_1_2x_1._CB582889946_.jpg"
                     className="carousal-image"
                 />
-                <div className="products-cards-container">
+                <div className="products-cards-container" onClick={openSearchPage}>
                     {productInfoCards.map((elem) => {
                         return <ProductInfoCard data={elem} />;
                     })}
                 </div>
-                <div className="more-products-cards-container">
+                <div className="more-products-cards-container " onClick={openSearchPage}>
                     {moreproductInfoCards.map((elem) => {
                         return <ProductInfoCard data={elem} />;
                     })}
                 </div>
-                <div className="more-products-cards-container">
+                <div className="more-products-cards-container" onClick={openSearchPage}>
                     {extraproductInfoCards.map((elem) => {
                         return <ProductInfoCard data={elem} />;
                     })}
