@@ -28,3 +28,4 @@ Mern-Summer-Pep is a full-stack web application built using the MERN (MongoDB, E
 ## 📂 Projects Implemented
 - 🖇️ **Server Side Searching**: [📁🔗 link](https://ashish-forgit.github.io/MERN-Summer-PEP/Day8_js-Server%20side%20searching/)
 - 🖇️ **Node Backend Deployed Project**: [📁🔗 link](https://mern-summer-pep.onrender.com/)
+- 🖇️ **Amazon Clone**: [📁🔗 link](https://ashish-amazon.vercel.app/)
