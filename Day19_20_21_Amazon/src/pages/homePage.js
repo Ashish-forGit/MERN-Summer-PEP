@@ -3,21 +3,32 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import ProductInfoCard from "../components/productInfoCard";
 import Navbar from "../components/navbar";
 import CategoryBar from "../components/categoryBar";
+import { useNavigate } from "react-router-dom";
+import useGetProducts from "../hooks/useGetProducts";
 import Footer from "../components/footer";
 
-import { useNavigate } from "react-router-dom";
-
-
-
-
 const HomePage = (props) => {
-    const { productInfoCards, categories, setSearchText, moreproductInfoCards, extraproductInfoCards } = props;
-
+    const { productInfoCards, categories, setSearchText } = props;
     const navigate = useNavigate();
-    const openSearchPage = ()=>{
+    const openSearchPage = () => {
         navigate("/search");
-    }
+    };
 
+    const { products, loading } = useGetProducts();
+    
+    let cnt = 0;
+    const reqLength = 16;
+    const filteredProducts = products.filter((elem, idx) => {
+        if (Math.random() >= 0.5 || reqLength - cnt === products.length - idx) {
+            if (cnt < reqLength) {
+                cnt++;
+                return true;
+            } else return false;
+        } else return false;
+    });
+
+    console.log(filteredProducts);
+    const dummy = [0, 1, 2, 3]; // [...Array(4).keys()]
     return (
         <div className="homepage-root-container">
             <Navbar setSearchText={setSearchText} openSearchPage={openSearchPage} />
@@ -25,33 +36,16 @@ const HomePage = (props) => {
             <div className="homepage-body">
                 <img
                     src="https://images-eu.ssl-images-amazon.com/images/G/31/OHL/24/BAU/feb/PC_hero_1_2x_1._CB582889946_.jpg"
-                    className="carousal-image"
+                    className="carousal-image" 
                 />
-                <div className="products-cards-container" onClick={openSearchPage}>
-                    {productInfoCards.map((elem) => {
-                        return <ProductInfoCard data={elem} />;
+                <div className="products-cards-container">
+                    {dummy.map((elem) => {
+                        return <ProductInfoCard  data={filteredProducts.slice(elem * 4, elem * 4 + 4)} />;
                     })}
                 </div>
-                <div className="more-products-cards-container " onClick={openSearchPage}>
-                    {moreproductInfoCards.map((elem) => {
-                        return <ProductInfoCard data={elem} />;
-                    })}
-                </div>
-                <div className="more-products-cards-container" onClick={openSearchPage}>
-                    {extraproductInfoCards.map((elem) => {
-                        return <ProductInfoCard data={elem} />;
-                    })}
-                </div>
-                
-                
-                
             </div>
             <Footer />
-            
-           
         </div>
-        
-
     );
 };
 

@@ -76,10 +76,6 @@
   display: flex;
 }
 
-.homepage-body {
-  height: 1400px;
-}
-
 .homepage-body > .carousal-image {
   width: 100%;
 }
@@ -90,7 +86,8 @@
   margin: 0 8px;
   display: flex;
   position: relative;
-  top: -320px;
+  top: -290px;
+  box-shadow: 0 2px 4px #0000001a;
 }
 
 .more-products-cards-container {
@@ -103,10 +100,13 @@
 }
 
 .products-info-card {
-  background-color: #fff;
+  background-color: #e3d9d9;
+  border-radius: 10px;
+  flex-wrap: wrap;
   flex-grow: 1;
   flex-basis: 340px;
   padding: 12px 16px;
+  box-shadow: 0 2px 4px #0000001a;
 
   & h3 {
     margin-bottom: 6px;
