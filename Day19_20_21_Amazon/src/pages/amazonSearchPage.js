@@ -3,8 +3,11 @@ import Navbar from '../components/navbar';
 import CategoryBar from '../components/categoryBar';
 import Footer from '../components/footer';
 import useGetProducts from '../hooks/useGetProducts';
+import { useContext } from 'react';
+import AppContext from '../context/appContext';
 
-const SearchPage = ({ categories, searchText, setSearchText }) => {
+const SearchPage = () => {
+    const { categories, searchText, setSearchText } = useContext(AppContext)
     const { products, loading } = useGetProducts(searchText);
     const navigate = useNavigate();
 
@@ -14,8 +17,8 @@ const SearchPage = ({ categories, searchText, setSearchText }) => {
 
     return (
         <>
-            <Navbar setSearchText={setSearchText} />
-            <CategoryBar categories={categories} />
+            <Navbar  />
+            <CategoryBar  />
             {loading ? (
                 <div className="product-loading">
                     <img src='../src/img/loading.gif'  />

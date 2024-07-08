@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsAmazon } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import AppContext from "../context/appContext";
 
-const Navbar = ({ setSearchText, openSearchPage }) => {
+const Navbar = ({openSearchPage}) => {
+const { setSearchText} = useContext(AppContext)
+
     const handleSearch = (e) => {
         setSearchText(e.target.value);
     };

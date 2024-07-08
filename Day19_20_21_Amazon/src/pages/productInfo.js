@@ -4,11 +4,14 @@ import Footer from "../components/footer";
 import '../../productInfo.css';
 import useGetProductsById from "../hooks/useGetProductsById";
 import { useParams, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import AppContext from "../context/appContext";
 
 
 
 
-const ProductInfo = ({ setSearchText, categories, searchText }) => {
+const ProductInfo = () => {
+    const { setSearchText, categories, searchText } = useContext(AppContext)
     const { id } = useParams();
     
     const productInfo = useGetProductsById(id);

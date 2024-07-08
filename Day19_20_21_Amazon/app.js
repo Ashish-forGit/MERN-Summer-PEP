@@ -4,6 +4,7 @@ import HomePage from "./src/pages/homePage";
 import SearchPage from "./src/pages/amazonSearchPage";
 import ProductInfo from "./src/pages/productInfo";
 import { useState } from "react";
+import AppContext from "./src/context/appContext";
 import {
     createBrowserRouter,
     Route,
@@ -308,29 +309,30 @@ const App = () => {
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <HomePage searchText={searchText}
-                setSearchText={setSearchText} 
-                productInfoCards = {productInfoCards} 
-                moreproductInfoCards={moreproductInfoCards}
-                extraproductInfoCards={extraproductInfoCards}
-                categories ={categories} />
+            element: <HomePage  
+                 />
         },
         {
             path: '/search',
-            element: <SearchPage searchText={searchText} 
-                setSearchText={setSearchText} 
-                categories = {categories} />
+            element: <SearchPage  />
         },
         {
             path: '/search/:id',
-            element: <ProductInfo categories ={categories}
-            setSearchText={setSearchText} 
-            productInfoCards = {productInfoCards} />
+            element: <ProductInfo />
         },
     ]);
 
+    const contextValues ={
+        searchText,
+        setSearchText,
+        categories
+    }
+
     return (
-        <RouterProvider router={router} />
+        <AppContext.Provider value={contextValues}>
+            <RouterProvider router={router} />
+        </AppContext.Provider>
+        
     );
 };
 

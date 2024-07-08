@@ -20,9 +20,11 @@
 // }
 
 // export default useGetProducts;
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import AppContext from "../context/appContext";
 
-const useGetProducts = (searchText = "") => {
+const useGetProducts = () => {
+    const {searchText} = useContext(AppContext)
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
