@@ -6,9 +6,9 @@ import useGetProducts from '../hooks/useGetProducts';
 import { useContext } from 'react';
 import AppContext from '../context/appContext';
 
-const SearchPage = () => {
-    const { categories, searchText, setSearchText } = useContext(AppContext)
-    const { products, loading } = useGetProducts(searchText);
+const SearchPage = (props) => {
+    
+    const { products, loading } = useGetProducts({isSearchTextDependent : true});
     const navigate = useNavigate();
 
     const handleProductInfo = (id) => {

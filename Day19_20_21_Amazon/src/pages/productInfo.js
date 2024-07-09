@@ -4,14 +4,9 @@ import Footer from "../components/footer";
 import '../../productInfo.css';
 import useGetProductsById from "../hooks/useGetProductsById";
 import { useParams, useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import AppContext from "../context/appContext";
 
-
-
-
-const ProductInfo = () => {
-    const { setSearchText, categories, searchText } = useContext(AppContext)
+const ProductInfo = ({ setSearchText }) => {
+    
     const { id } = useParams();
     
     const productInfo = useGetProductsById(id);
@@ -26,14 +21,14 @@ const ProductInfo = () => {
 
     return (
         <>
-            <Navbar setSearchText={setSearchText} openSearchPage={openSearchPage} />
-            <CategoryBar categories={categories} />
+            <Navbar setSearchText={setSearchText} />
+            <CategoryBar  />
             <div className="product-info-container">
                 <div className="product-image-container">
-                    {/* productInfo.images.map((imageLink)=>{
-                        return <img src={`$im`}
-                    }) */}
+                
                     <img src={productInfo.thumbnail} alt={productInfo.title} className="product-image-large" />
+                    
+                
                 </div>
                 <div className="product-details">
                     <h1 className="product-title">{productInfo.title}</h1>

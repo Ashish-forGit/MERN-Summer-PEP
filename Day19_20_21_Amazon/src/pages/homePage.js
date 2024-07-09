@@ -10,14 +10,15 @@ import { useContext } from "react";
 import AppContext from "../context/appContext";
 
 const HomePage = () => {
-    // const { productInfoCards, categories, setSearchText } = props;
     
+    const{setSearchText} = useContext(AppContext)
     const navigate = useNavigate();
     const openSearchPage = () => {
         navigate("/search");
     };
 
-    const { products, loading } = useGetProducts();
+    const { products } = useGetProducts({isSearchTextDependent : false});
+    
     
     let cnt = 0;
     const reqLength = 16;
@@ -34,7 +35,7 @@ const HomePage = () => {
     const dummy = [0, 1, 2, 3]; // [...Array(4).keys()]
     return (
         <div className="homepage-root-container">
-            <Navbar  openSearchPage={openSearchPage} />
+            <Navbar setSearchText={setSearchText} openSearchPage={openSearchPage} />
             <CategoryBar  />
             <div className="homepage-body">
                 <img

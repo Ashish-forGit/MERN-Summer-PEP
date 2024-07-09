@@ -1,6 +1,6 @@
-import { useContext } from "react";
+
 import { useNavigate } from "react-router-dom";
-import AppContext from "../context/appContext";
+
 
 const ProductInfoCard = (props) => {
     const { data = [] } = props;
@@ -9,9 +9,6 @@ const ProductInfoCard = (props) => {
     const handleProductInfo = (id) => {
         navigate(`/search/${id}`);
     };
-
-    const contextData = useContext(AppContext)
-    console.log(contextData);
 
     return (
         <div className="products-info-card">
