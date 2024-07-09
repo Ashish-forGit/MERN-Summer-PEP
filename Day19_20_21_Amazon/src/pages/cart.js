@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import CategoryBar from "../components/categoryBar";
 import AppContext from "../context/appContext";
 
 const Cart = () => {
@@ -9,6 +10,7 @@ const Cart = () => {
   return (
     <>
       <Navbar />
+      <CategoryBar />
       <div className="cart-container">
         <h2>Shopping Cart</h2>
         {cart.length === 0 ? (

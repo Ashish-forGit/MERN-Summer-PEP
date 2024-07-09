@@ -3,6 +3,7 @@ import "./globalStyles.css";
 import HomePage from "./src/pages/homePage";
 import SearchPage from "./src/pages/amazonSearchPage";
 import ProductInfo from "./src/pages/productInfo";
+import SignUp from "./src/pages/signUp";
 import { useState } from "react";
 import AppContext from "./src/context/appContext";
 import Cart from "./src/pages/cart";
@@ -51,6 +52,10 @@ const App = () => {
         {
             path: '/cart',
             element: <Cart />
+        },
+        {
+            path: '/signup',
+            element: <SignUp />
         },
     ]);
 
@@ -105,6 +110,7 @@ const App = () => {
     return (
         <AppContext.Provider value={contextValues}>
             <RouterProvider router={router} />
+            <ToastContainer autoClose={1000} />
         </AppContext.Provider>
         
     );

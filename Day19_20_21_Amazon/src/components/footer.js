@@ -10,7 +10,6 @@ import { FaPaypal } from "react-icons/fa6";
 import { FaGooglePay } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 
-
 const Footer = () => {
     return (
         <footer className="footer">
@@ -19,23 +18,19 @@ const Footer = () => {
                     <div className="col">
                         <img className="logo" src="img/logo.png" alt=""/>
                         <h4>Contact</h4>
-                        <p><strong>Address:</strong> Lovely Professonal University, Phagwara, Punjab, India</p>
-                        
+                        <p><strong>Address:</strong> Lovely Professional University, Phagwara, Punjab, India</p>
                         <p><strong>Email:</strong> info@amazon.in</p>
-                         <br/>
-                        
                         <div className="follow">
                             <h4>Follow us</h4>
                             <div className="icon">
-                                <i className="fab fa-facebook-f"><ImFacebook2 /></i>
-                                <i className="fab fa-twitter"><BsTwitterX/></i>
-                                <i className="fab fa-instagram"><RiInstagramFill/></i>
-                                <i className="fab fa-pinterest-p"><FaPinterestP/></i>
-                                <i className="fab fa-youtube"><IoLogoYoutube/></i>
+                                <ImFacebook2 />
+                                <BsTwitterX/>
+                                <RiInstagramFill/>
+                                <FaPinterestP/>
+                                <IoLogoYoutube/>
                             </div>
                         </div>
                     </div>
-
                     <div className="col">
                         <h4>About</h4>
                         <a href="#">About us</a> <br/>
@@ -44,7 +39,6 @@ const Footer = () => {
                         <a href="#">Terms & Conditions</a> <br/>
                         <a href="#">Contact Us</a>
                     </div>
-
                     <div className="col">
                         <h4>My Account</h4>
                         <a href="#">Sign In</a><br/>
@@ -53,24 +47,26 @@ const Footer = () => {
                         <a href="#">Track My Order</a><br/>
                         <a href="#">Help</a>
                     </div>
-
                     <div className="col install">
                         <h4>Install App</h4>
                         <p>From App Store or Google Play</p>
-                        <IoLogoGooglePlaystore/>
-                        <FaAppStoreIos/>
+                        <div className="store-icons">
+                            <IoLogoGooglePlaystore className="store-icon"/>
+                            <FaAppStoreIos className="store-icon"/>
+                        </div>
                         <div className="row">
                             <img src="img/pay/app.jpg" alt=""/>
                             <img src="img/pay/play.jpg" alt=""/>
                         </div>
                         <p>Secured Payment Gateways </p>
-                        <FaAmazonPay/>
-                        <FaPaypal/>
-                        <FaGooglePay/>
-                        <img src="img/pay/pay.png" alt=""/>
+                        <div className="payment-icons">
+                            <FaAmazonPay />
+                            <FaPaypal />
+                            <FaGooglePay />
+                            <img src="img/pay/pay.png" alt=""/>
+                        </div>
                     </div>
                 </div>
-
                 <div className="copyright">
                     <p>© 2024, <FaGithub/> Ashish-forGit</p>
                 </div>

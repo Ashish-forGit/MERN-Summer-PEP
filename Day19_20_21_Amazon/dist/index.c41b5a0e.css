@@ -32,6 +32,21 @@
   font-size: 10px;
 }
 
+.homepage-nav .nav-cart-link {
+  color: #fff;
+  align-items: center;
+  text-decoration: none;
+  display: flex;
+}
+
+.homepage-nav .nav-cart-link:hover {
+  color: #f3a847;
+}
+
+.homepage-nav .nav-cart-link .fa-shopping-cart {
+  margin-right: 10px;
+}
+
 .homepage-search-container {
   flex-grow: 1;
   height: 30px;
@@ -74,6 +89,10 @@
   gap: 16px;
   padding: 0 12px;
   display: flex;
+}
+
+.homepage-body {
+  height: 800px;
 }
 
 .homepage-body > .carousal-image {

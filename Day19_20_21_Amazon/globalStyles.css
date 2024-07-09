@@ -21,6 +21,7 @@
     width: 70px;
     font-size: 15px;
     cursor: pointer;
+    
 }
 .title-h4{
     cursor: pointer;
@@ -31,6 +32,25 @@
     font-size: 10px;
     
 }
+
+.homepage-nav .nav-cart-link {
+    color: #fff; /* Set the color to white */
+    text-decoration: none; /* Remove the underline */
+    display: flex;
+    align-items: center;
+  }
+  
+  .homepage-nav .nav-cart-link:hover {
+    color: #f3a847; /* Change color on hover if needed */
+  }
+  
+  .homepage-nav .nav-cart-link .fa-shopping-cart {
+    margin-right: 10px; /* Add some space between the icon and text */
+  }
+  
+
+
+
 .homepage-search-container{
     flex-grow: 1;
     height: 30px;
@@ -75,9 +95,9 @@
       color: white;
       padding: 0 12px;
 }
-/* .homepage-body{
-    height: 1400px;
-} */
+.homepage-body{
+    height: 800px;
+}
 .homepage-body>.carousal-image{
     width: 100%;
 }

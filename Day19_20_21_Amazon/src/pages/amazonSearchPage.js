@@ -8,7 +8,7 @@ import AppContext from '../context/appContext';
 
 const SearchPage = (props) => {
     
-    const { products, loading } = useGetProducts({isSearchTextDependent : false});
+    const { products, loading } = useGetProducts({isSearchTextDependent : true});
     const navigate = useNavigate()
     const handleProductInfo = (id) => {
         navigate(`/search/${id}`);
