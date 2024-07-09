@@ -2,7 +2,7 @@ const useSignUp = () =>{
 
 
 
-    const signUp= async({email, password}) =>{
+    const signUp= async({name, email, password}) =>{
         console.log("signup called");
         const URL  = 'http://localhost:1400/api/v1/auth/signup';
         const OPTIONS = {
@@ -10,7 +10,7 @@ const useSignUp = () =>{
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({email, password}) 
+            body: JSON.stringify({name, email, password}) 
             }
         const res = await fetch(URL, OPTIONS);
 
