@@ -248,7 +248,7 @@ body {
     text-align: center;
     height: 50px;
     width: 100px;
-    position: relative;
+    
     left: 880px;
     top: 5px;
     bottom: 20px;
@@ -361,4 +361,49 @@ body {
     margin-top: 20px;
     font-size: 0.8rem;
     color: #888;
+}
+
+
+/* globalStyles.css */
+
+.cart-container {
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-item-details button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cart-item-details button:hover {
+    background-color: darkred;
+}
+
+/* Optional: Customize the ToastContainer position */
+.Toastify__toast-container {
+    top: 1rem;
+    right: 1rem;
 }

@@ -8,12 +8,13 @@ import AppContext from '../context/appContext';
 
 const SearchPage = (props) => {
     
-    const { products, loading } = useGetProducts({isSearchTextDependent : true});
-    const navigate = useNavigate();
-
+    const { products, loading } = useGetProducts({isSearchTextDependent : false});
+    const navigate = useNavigate()
     const handleProductInfo = (id) => {
         navigate(`/search/${id}`);
     };
+
+    const {addToCart} = useContext(AppContext)
 
     return (
         <>
@@ -27,9 +28,9 @@ const SearchPage = (props) => {
             ) : (
                 <div className="products-container">
                     {products.map((elem) => (
-                        <div key={elem.id} className="product-card" onClick={() => handleProductInfo(elem.id)}>
-                            <img src={elem.thumbnail} alt={elem.title} className="product-image" />
-                            <div className="product-info">
+                        <div key={elem.id} className="product-card" >
+                            <img src={elem.thumbnail} alt={elem.title} className="product-image"onClick={() => handleProductInfo(elem.id)} />
+                            <div className="product-info" >
                                 <h2 className="product-title">{elem.title}</h2>
                                 <p className="product-description">{elem.description}</p>
                                 <div className="product-rating">
@@ -37,7 +38,7 @@ const SearchPage = (props) => {
                                     <span className="rating-count">({elem.stock} in stock)</span>
                                 </div>
                                 <p className="product-price">₹{elem.price}</p>
-                                <button className="add-to-cart-button">Add to cart</button>
+                                <button onClick={()=>{addToCart(elem)}} className="add-to-cart-button"  >Add to cart</button>
                             </div>
                         </div>
                     ))}

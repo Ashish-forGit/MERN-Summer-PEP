@@ -6,9 +6,10 @@ import { FaUser } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import AppContext from "../context/appContext";
+import { Link } from 'react-router-dom';
 
 const Navbar = ({openSearchPage}) => {
-const { setSearchText} = useContext(AppContext)
+const { setSearchText, cart} = useContext(AppContext)
 
     const handleSearch = (e) => {
         setSearchText(e.target.value);
@@ -42,7 +43,9 @@ const { setSearchText} = useContext(AppContext)
                 </button>
             </div>
             <h4><FaUser /> Profile</h4>
-            <h4><FaShoppingCart /> Cart</h4>
+            <h4 title={JSON.stringify(cart)}>
+                <Link to="/cart"><FaShoppingCart /> Cart</Link>
+            </h4>
         </nav>
     );
 };

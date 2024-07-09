@@ -4,12 +4,15 @@ import Footer from "../components/footer";
 import '../../productInfo.css';
 import useGetProductsById from "../hooks/useGetProductsById";
 import { useParams, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import AppContext from "../context/appContext";
 
 const ProductInfo = ({ setSearchText }) => {
     
     const { id } = useParams();
     
     const productInfo = useGetProductsById(id);
+    const {addToCart} = useContext(AppContext)
 
     const navigate = useNavigate();
     const openSearchPage = ()=>{
@@ -38,7 +41,7 @@ const ProductInfo = ({ setSearchText }) => {
                         <span className="rating-count">({productInfo.stock} in stock)</span>
                     </div>
                     <p className="product-price">₹{productInfo.price}</p>
-                    <button className="add-to-cart-button-info">Buy</button>
+                    <button onClick={()=>{addToCart(productInfo)}} className="add-to-cart-button-info">Add to Cart</button>
                 </div>
             </div>
             <Footer/>
