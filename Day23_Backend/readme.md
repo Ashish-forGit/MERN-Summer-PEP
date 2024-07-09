@@ -1,6 +1,4 @@
-
-
-To Install
+To Install:
 
 npm i cors
 npm i express
@@ -53,5 +51,23 @@ procedures:
     --------> make a hook
     --------> which does a simple call of api
     --------> use that hook in signup page
+    5. Go to frontend and test the connection
+    --> make a hook
+    --> which does a simple call of api
+    --> use that hook in signUp page on signUp button click
+    --> and check if the response is "in progress..."
 
+    6. inside main.js
+    --> allow cors
+
+    7. inside frontend 
+    --> do validation
+    --> send data in body for signUp
+
+    8. inside main.js
+    --> app.use(express.json()) (this should be written just after the app variable)
+
+    9. inside authController.js
+    (the model is pending)
+    --> get the body and verify if the body is coming or not
 
