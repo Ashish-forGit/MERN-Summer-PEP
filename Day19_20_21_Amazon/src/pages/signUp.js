@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useSignUp from "../hooks/useSignUp";
 import '../../signUpPage.css';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     const { signUp } = useSignUp();
@@ -89,6 +90,7 @@ const SignUp = () => {
                 />
                 {errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
                 <button onClick={handleSubmit}>Sign Up</button>
+                <p>Already have an account? <Link to="/login">Log In</Link></p>
             </div>
         </div>
     );

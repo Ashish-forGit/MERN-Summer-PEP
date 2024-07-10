@@ -9,7 +9,7 @@ import AppContext from "../context/appContext";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ openSearchPage }) => {
-  const { setSearchText, cart,  } = useContext(AppContext);
+  const { setSearchText, cart, user } = useContext(AppContext);
 
   const handleSearch = (e) => {
     setSearchText(e.target.value);
@@ -17,7 +17,7 @@ const Navbar = ({ openSearchPage }) => {
 
   const navigate = useNavigate();
   const openHomePage = () => {
-    navigate("/");
+    navigate("/home");
   };
 
   return (
@@ -45,7 +45,7 @@ const Navbar = ({ openSearchPage }) => {
         </button>
       </div>
       <h4>
-        <FaUser /> Profile
+      <FaUser /> {user ? user.name : 'Profile'}
       </h4>
       <h4 title={JSON.stringify(cart)}>
         <Link to="/cart" className="nav-cart-link">

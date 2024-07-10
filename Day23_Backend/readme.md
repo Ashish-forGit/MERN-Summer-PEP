@@ -1,15 +1,14 @@
-To Install:
+1. To Install:
+    npm i cors
+    npm i express
+    npm i jsonwebtoken
+    npm i bcrypt
+    npm i dotenv    
+    npm i nodemon
+    npm i mongodb
+    npm i mongoose
 
-npm i cors
-npm i express
-npm i jsonwebtoken
-npm i bcrypt
-npm i dotenv
-npm i nodemon
-npm i mongodb
-npm i mongoose
-
-folder Structure:
+2. folder Structure:
     |- main.js
     |- .env
     router
@@ -24,7 +23,7 @@ folder Structure:
         | - jwt.js
     middlewares
 
-procedures:
+3. procedures:
     1. inside main.js
     ------> require express, make app, listen to port, port will come from .env
     ------> app.get('/', (req, res)=>{res.send("app is running")})
@@ -70,4 +69,18 @@ procedures:
     9. inside authController.js
     (the model is pending)
     --> get the body and verify if the body is coming or not
+
+    ((for debugging use NETWORK Terminal in Developer tools))
+
+    10. inside userModel.js
+    --> create a model
+        --> email, password, name, createdAt, updatedAt
+
+    11. inside authController.js --> signUp function
+    --> for new email --> create a new user and return the id with proper format
+        --> {status: 'success', message: 'User created", data: { user: user }}
+    --> if email already exists --> send error in proper format
+        --> status: 400, and json with status fail and message : 'User already exists'
+
+    12. Make proper UI for Login and SingUp Pages (both page should be separate)    
 

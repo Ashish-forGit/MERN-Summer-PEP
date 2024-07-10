@@ -13,6 +13,7 @@ import {
     createBrowserRouter,
     RouterProvider,
   } from "react-router-dom";
+import Login from "./src/pages/logIn";
 
 const parent = document.getElementById("root");
 const root = ReactDOM.createRoot(parent);
@@ -38,7 +39,7 @@ const App = () => {
 
     const router = createBrowserRouter([
         {
-            path: '/',
+            path: '/home',
             element: <HomePage />
         },
         {
@@ -54,8 +55,12 @@ const App = () => {
             element: <Cart />
         },
         {
-            path: '/signup',
+            path: '/',
             element: <SignUp />
+        },
+        {
+            path: '/login',
+            element: <Login />
         },
     ]);
 
@@ -97,13 +102,16 @@ const App = () => {
         toast.warn(`Item removed from cart.`);
     };
 
+    const [user, setUser] = useState(null); // Add user state
+
     const contextValues ={
         searchText,
         setSearchText,
         categories,
         cart,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        user, setUser
     }
     console.log(cart);
 

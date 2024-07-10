@@ -1,24 +1,43 @@
-const useSignUp = () =>{
+import { useContext } from 'react';
+import AppContext from '../context/appContext';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
+const useSignUp = () => {
+    const { setUser } = useContext(AppContext);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const navigate = useNavigate(); // Initialize navigate
 
-
-    const signUp= async({name, email, password}) =>{
-        console.log("signup called");
-        const URL  = 'http://localhost:1400/api/v1/auth/signup';
-        const OPTIONS = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({name, email, password}) 
+    const signUp = async ({ name, email, password }) => {
+        setLoading(true);
+        setError(null);
+        try {
+            const response = await fetch('http://localhost:1400/api/v1/auth/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, password }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+                throw new Error(data.message || 'Something went wrong');
             }
-        const res = await fetch(URL, OPTIONS);
+            if (data.data && data.data.user) {
+                setUser({ name: data.data.user.name, email: data.data.user.email }); // Set user data
+                navigate('/login'); // Redirect to home page
+            } else {
+                throw new Error('User data is missing from the response');
+            }
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-        console.log(res);
-        
-    }
-
-    return {signUp}
-}
+    return { signUp, loading, error };
+};
 
 export default useSignUp;
