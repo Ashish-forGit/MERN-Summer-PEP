@@ -10,7 +10,7 @@ app.use(exprees.json());
 
 app.use(cors({origin: true}));
 
-app.use('https://amazon-clone-c5qy.onrender.com',authRouter);
+app.use('/api/v1/auth',authRouter);
 
 app.listen(process.env.PORT,()=>{
     console.log(`----------Server started -> ${process.env.PORT}---------`);
