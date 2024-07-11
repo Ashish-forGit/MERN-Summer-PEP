@@ -15,7 +15,7 @@ const useLogin = () => {
         setError(null);
         try {
 
-            const URL = 'https://amazon-clone-c5qy.onrender.com/login'
+            const URL = 'https://amazon-clone-c5qy.onrender.com/api/v1/auth/login'
             const OPTIONS = {
                 method: "POST",
                 headers: {

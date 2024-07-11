@@ -13,7 +13,7 @@ const useSignUp = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await fetch('https://amazon-clone-c5qy.onrender.com/signup', {
+            const response = await fetch('https://amazon-clone-c5qy.onrender.com/api/v1/auth/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
