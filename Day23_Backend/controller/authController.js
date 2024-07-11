@@ -5,6 +5,26 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
+const generateJWT = (user) => {
+    try {
+        const token = jwt.sign(
+            {
+                exp: Math.floor(Date.now() / 1000) + 120, // 120 seconds from now
+                data: {
+                    userId: user._id,
+                    email: user.email
+                }
+            },
+            process.env.JWT_SECRET_KEY
+        );
+        return token;
+    } catch (error) {
+        console.error("Error generating JWT:", error);
+        return null;
+    }
+}
+
+
 
 const signUp = async (req, res) => {
     try {
@@ -68,6 +88,13 @@ const logIn = async (req, res) => {
     try {
         const { email, password } = req.body;
 
+        if(!email || !password){
+            return res.status(400).json({
+                status: "fail",
+                message: "Name, email and password is required"
+            })
+        }
+
         // Check if the email exists
         const user = await userModel.findOne({ email });
         if (!user) {
@@ -78,11 +105,12 @@ const logIn = async (req, res) => {
         }
 
         // Check if the password is correct
-        const isPasswordCorrect = await bcrypt.compare(password, user.password);
+        const hashedPassword = user.password;
+        const isPasswordCorrect = await bcrypt.compare(password, hashedPassword);
         if (!isPasswordCorrect) {
             return res.status(401).json({
                 status: 'fail',
-                message: 'Invalid email or password'
+                message: 'Invalid password'
             });
         }
 
@@ -92,13 +120,15 @@ const logIn = async (req, res) => {
             message: 'User logged in',
             data: {
                 user: {
-                    id: user._id,
                     name: user.name,
-                    email: user.email
-                }
-            }
+                    email: user.email,
+                },
+                token: generateJWT(user)  
+            },
+            
         });
-    } catch (error) {
+    } 
+    catch (error) {
         res.status(500).json({
             status: 'error',
             message: error.message

@@ -35,32 +35,34 @@ const categories = [
 
 const App = () => {
     const [searchText, setSearchText] = useState("");
+    const [loggedInUser, setloggedInUser] = useState(null); 
+    const [user, setUser] = useState(null); // Add user state
     
 
     const router = createBrowserRouter([
         {
-            path: '/home',
-            element: <HomePage />
+            path: '/',
+            element: !loggedInUser ? <SignUp /> : <HomePage/>
         },
         {
             path: '/search',
-            element: <SearchPage  />
+            element: !loggedInUser ? <SignUp /> :  <SearchPage  />
         },
         {
             path: '/search/:id',
-            element: <ProductInfo />
+            element: !loggedInUser ? <SignUp /> :  <ProductInfo />
         },
         {
             path: '/cart',
-            element: <Cart />
+            element: !loggedInUser ? <SignUp /> :  <Cart />
         },
         {
             path: '/signup',
-            element: <SignUp />
+            element: loggedInUser ? <HomePage /> : <SignUp />
         },
         {
             path: '/login',
-            element: <Login />
+            element: loggedInUser ? <HomePage /> : <Login />
         },
     ]);
 
@@ -102,7 +104,17 @@ const App = () => {
         toast.warn(`Item removed from cart.`);
     };
 
-    const [user, setUser] = useState(null); // Add user state
+    
+
+    const appLogin = (user)=>{
+        setloggedInUser(user);
+    }
+
+    const appLogout = () => {
+        setUser(null);
+        setloggedInUser(null);
+        setCart([]);
+      };
 
     const contextValues ={
         searchText,
@@ -111,9 +123,11 @@ const App = () => {
         cart,
         addToCart,
         removeFromCart,
-        user, setUser
+        user, setUser,
+        loggedInUser, setloggedInUser, appLogin,
+        appLogout
     }
-    console.log(cart);
+    console.log("status", loggedInUser);
 
     return (
         <AppContext.Provider value={contextValues}>

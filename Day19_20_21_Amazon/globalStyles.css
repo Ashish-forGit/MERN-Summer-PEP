@@ -12,10 +12,37 @@
     padding: 10px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 20px;
     background-color: #131921;
     color: #fff;
 }
+.logout-button{
+    gap: 3px;
+    display: flex;
+}
+.logout-button button {
+    background-color: transparent;
+    border: none;
+    color: #ffff;
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    align-items: center;
+    font-size: 15px;
+  }
+  
+  .logout-button button:hover {
+    color: #febd69;
+  }
+.profile{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    gap: 3px;
+}
+
+
 
 .homepage-nav>h4{
     width: 70px;
@@ -37,6 +64,7 @@
     color: #fff; /* Set the color to white */
     text-decoration: none; /* Remove the underline */
     display: flex;
+    gap: 3px;
     align-items: center;
   }
   
@@ -53,13 +81,26 @@
 
 .homepage-search-container{
     flex-grow: 1;
+    
     height: 30px;
+    justify-content: center;
+    align-items: center;
    
     display: flex;
 
     input{
+        width: 900px;
+        justify-content: center;
+        align-items: center;
         flex-grow: 1;
+       
     }
+    input:focus {
+        border-color: #ddcb07;
+        box-shadow: 2px 2px 3px  #ddcb07;
+        outline: none;
+
+      }
 
     select{
         height: 30px;
@@ -325,6 +366,8 @@ body {
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .section-p1 {
@@ -336,7 +379,7 @@ body {
 .col {
     flex: 1;
     max-width: 200px;
-    margin: 20px;
+   
     color: white;
 }
 .col>a{
@@ -357,12 +400,17 @@ body {
 
 .icon {
     margin-top: 10px;
+    margin-top: 5px;
+    font-size: 30px;
+    gap: 5px;
 }
 
 .icon i {
     margin: 0 5px;
     font-size: 1.5rem;
     color: #333;
+    gap: 5px;
+
 }
 
 .row {
@@ -383,6 +431,20 @@ body {
     color: #888;
 }
 
+.store-icons{
+    margin-top: 5px;
+    font-size: 50px;
+}
+
+.payment-icons{
+    margin-top: 5px;
+    font-size: 50px;
+}
+
+.follow{
+    gap: 5px;
+}
+
 
 /* cart.css */
 
@@ -391,7 +453,7 @@ body {
     justify-content: end;
     margin-bottom: 0px;
     
-    height: 400px;
+    height: auto;
 }
 
 .cart-item {

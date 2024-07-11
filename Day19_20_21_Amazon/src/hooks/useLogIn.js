@@ -5,8 +5,8 @@ import { useContext } from 'react';
 import AppContext from '../context/appContext';
 
 const useLogin = () => {
-    const navigate = useNavigate();
-    const { setUser } = useContext(AppContext);
+    
+    const { setloggedInUser, appLogin, setUser } = useContext(AppContext);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -26,6 +26,12 @@ const useLogin = () => {
 
             const res = await fetch(URL, OPTIONS);
             const data = await res.json();
+            setUser({ name: data.data.user.name, email: data.data.user.email });
+
+            if (data.status == "success") {
+                appLogin(data.data.user);
+                localStorage.setItem("authorization", data.data.token) // storing token
+            }
             
             if (!res.ok) {
                 throw new Error(data.message || 'Something went wrong');
@@ -34,8 +40,8 @@ const useLogin = () => {
             // Handle successful login, e.g., save token, redirect, etc.
             console.log('Login successful', data);
             toast.success("User LogedIn")
-            setUser({ name: data.data.user.name, email: data.data.user.email }); // Set user data
-            navigate('/home');
+            setloggedInUser({ name: data.data.user.name, email: data.data.user.email }); // Set user data
+            
         
         } catch (err) {
             setError(err.message);

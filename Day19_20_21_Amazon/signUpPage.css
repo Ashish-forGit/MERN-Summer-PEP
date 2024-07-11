@@ -14,6 +14,7 @@ body, html {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  
 }
 
 .signup-form {
@@ -23,6 +24,7 @@ body, html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 300px;
+  opacity: 0.8;
 }
 
 .signup-form h3 {

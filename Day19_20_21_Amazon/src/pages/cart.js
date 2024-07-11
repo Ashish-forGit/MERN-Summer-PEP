@@ -3,13 +3,19 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import CategoryBar from "../components/categoryBar";
 import AppContext from "../context/appContext";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { cart, removeFromCart } = useContext(AppContext);
+  const { cart, removeFromCart, setSearchText } = useContext(AppContext);
+
+  const navigate = useNavigate()
+  const openSearchPage = () => {
+    navigate("/search");
+};
 
   return (
     <>
-      <Navbar />
+      <Navbar setSearchText={setSearchText} openSearchPage={openSearchPage} />
       <CategoryBar />
       <div className="cart-container">
         <h2>Shopping Cart</h2>
@@ -29,6 +35,7 @@ const Cart = () => {
                   <p>Price: ${item.price}</p>
                   <p>Quantity: {item.count}</p>
                   <p>Total: ${item.price * item.count}</p>
+                  <button className="btn btn-success">Buy</button>
                   <button onClick={() => removeFromCart(item.id)} className="btn btn-danger">Remove</button>
                 </div>
               </li>

@@ -1,11 +1,10 @@
-import { useContext } from 'react';
-import AppContext from '../context/appContext';
+
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const useSignUp = () => {
-    const { setUser } = useContext(AppContext);
+   
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const navigate = useNavigate(); // Initialize navigate
@@ -27,7 +26,7 @@ const useSignUp = () => {
             }
             if (data.data && data.data.user) {
                 toast.success('User Registered')
-                setUser({ name: data.data.user.name, email: data.data.user.email }); // Set user data
+                
                 navigate('/login'); // Redirect to home page
             } else {
                 throw new Error('User data is missing from the response');

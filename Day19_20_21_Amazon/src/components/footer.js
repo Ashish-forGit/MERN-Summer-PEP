@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="footer-container">
                 <div className="section-p1">
                     <div className="col">
-                        <img className="logo" src="img/logo.png" alt=""/>
+                        
                         <h4>Contact</h4>
                         <p><strong>Address:</strong> Lovely Professional University, Phagwara, Punjab, India</p>
                         <p><strong>Email:</strong> info@amazon.in</p>

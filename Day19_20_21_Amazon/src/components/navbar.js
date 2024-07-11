@@ -8,8 +8,10 @@ import { useNavigate } from "react-router-dom";
 import AppContext from "../context/appContext";
 import { Link } from "react-router-dom";
 
+import { SlLogout } from "react-icons/sl";
+
 const Navbar = ({ openSearchPage }) => {
-  const { setSearchText, cart, user } = useContext(AppContext);
+  const { setSearchText, cart, user, appLogout, setUser, setloggedInUser } = useContext(AppContext);
 
   const handleSearch = (e) => {
     setSearchText(e.target.value);
@@ -17,7 +19,15 @@ const Navbar = ({ openSearchPage }) => {
 
   const navigate = useNavigate();
   const openHomePage = () => {
-    navigate("/home");
+    navigate("/");
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("authorization");
+    setUser(null);
+    setloggedInUser(null);
+    appLogout();
+    navigate("/login");
   };
 
   return (
@@ -44,14 +54,23 @@ const Navbar = ({ openSearchPage }) => {
           <IoSearchSharp />
         </button>
       </div>
-      <h4>
-      <FaUser /> {user ? user.name : 'Profile'}
+
+      <h4 className="profile">
+      <FaUser /> { user ? user.name : 'Profile'}
       </h4>
+
       <h4 title={JSON.stringify(cart)}>
         <Link to="/cart" className="nav-cart-link">
           <FaShoppingCart /> Cart
         </Link>
       </h4>
+      <h4 className="logout-button">
+      <SlLogout />
+      <button onClick={handleLogout} >
+          Logout
+        </button>
+      </h4>
+
     </nav>
   );
 };
