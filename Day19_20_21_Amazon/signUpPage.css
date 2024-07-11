@@ -8,7 +8,7 @@ body, html {
 }
 
 .signup-container {
-  background: url('./src/img/b17.jpg') no-repeat center center fixed;
+  background: url('./src/img/newbg_Amazon.jpg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   justify-content: center;

@@ -55,7 +55,7 @@ const App = () => {
             element: <Cart />
         },
         {
-            path: '/',
+            path: '/signup',
             element: <SignUp />
         },
         {

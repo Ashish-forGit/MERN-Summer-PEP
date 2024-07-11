@@ -3,11 +3,14 @@ import useLogIn from "../hooks/useLogIn";
 import { Link } from 'react-router-dom';
 import '../../signUpPage.css';
 
+
 const Login = () => {
     const { login, loading, error } = useLogIn();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState({});
+
+
 
     const validate = () => {
         let validation = true;
@@ -42,6 +45,7 @@ const Login = () => {
     return (
         <div className="signup-container">
             <div className="signup-form">
+                <img src="https://www.logo.wine/a/logo/Amazon_(company)/Amazon_(company)-Logo.wine.svg" height={100} width={200}/>
                 <input
                     type="email"
                     placeholder="Email"

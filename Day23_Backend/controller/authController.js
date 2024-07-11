@@ -5,12 +5,22 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
+
 const signUp = async (req, res) => {
     try {
         const { name, email, password } = req.body;
 
         // Log the request body
         console.log(req.body);
+
+        if(!email || !password || !name){
+            return res.status(400).json({
+                status: "fail",
+                message: "Name, email and password is required"
+            })
+        }
+
+        
 
         // Check if the email already exists
         const existingUser = await userModel.findOne({ email });
@@ -43,7 +53,8 @@ const signUp = async (req, res) => {
                 }
             }
         });
-    } catch (error) {
+    } 
+    catch (error) {
         res.status(500).json({
             status: 'error',
             message: error.message

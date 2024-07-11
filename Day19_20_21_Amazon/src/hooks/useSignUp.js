@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import AppContext from '../context/appContext';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const useSignUp = () => {
     const { setUser } = useContext(AppContext);
@@ -25,6 +26,7 @@ const useSignUp = () => {
                 throw new Error(data.message || 'Something went wrong');
             }
             if (data.data && data.data.user) {
+                toast.success('User Registered')
                 setUser({ name: data.data.user.name, email: data.data.user.email }); // Set user data
                 navigate('/login'); // Redirect to home page
             } else {

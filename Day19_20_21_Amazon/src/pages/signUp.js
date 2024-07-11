@@ -60,6 +60,7 @@ const SignUp = () => {
     return (
         <div className="signup-container">
             <div className="signup-form">
+            <img src="https://www.logo.wine/a/logo/Amazon_(company)/Amazon_(company)-Logo.wine.svg" height={100} width={200}/>
                 <h3>Enter Your Details</h3>
                 <input
                     type="text"

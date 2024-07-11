@@ -350,6 +350,9 @@ body {
 }
 
 .cart-container {
+  justify-content: end;
+  height: 400px;
+  margin-bottom: 0;
   padding: 20px;
 }
 
@@ -484,7 +487,7 @@ body, html {
 }
 
 .signup-container {
-  background: url("b17.dc0675df.jpg") center / cover no-repeat fixed;
+  background: url("newbg_Amazon.f818fe26.jpg") center / cover no-repeat fixed;
   justify-content: center;
   align-items: center;
   height: 100vh;

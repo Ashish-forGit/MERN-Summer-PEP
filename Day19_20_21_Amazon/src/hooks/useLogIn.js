@@ -26,13 +26,14 @@ const useLogin = () => {
 
             const res = await fetch(URL, OPTIONS);
             const data = await res.json();
+            
             if (!res.ok) {
                 throw new Error(data.message || 'Something went wrong');
             }
 
             // Handle successful login, e.g., save token, redirect, etc.
             console.log('Login successful', data);
-            toast.success("Login successfuly")
+            toast.success("User LogedIn")
             setUser({ name: data.data.user.name, email: data.data.user.email }); // Set user data
             navigate('/home');
         

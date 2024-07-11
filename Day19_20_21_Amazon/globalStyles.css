@@ -312,7 +312,7 @@ body {
     background-color: #f3a847;
 }
 
-
+ /* footer */
 
 .footer {
     
@@ -384,10 +384,14 @@ body {
 }
 
 
-/* globalStyles.css */
+/* cart.css */
 
 .cart-container {
     padding: 20px;
+    justify-content: end;
+    margin-bottom: 0px;
+    
+    height: 400px;
 }
 
 .cart-item {
