@@ -9,6 +9,7 @@ import { FaAmazonPay } from "react-icons/fa";
 import { FaPaypal } from "react-icons/fa6";
 import { FaGooglePay } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
+import '../../footer.css'
 
 const Footer = () => {
     return (
