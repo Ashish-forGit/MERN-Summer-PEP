@@ -60,8 +60,8 @@ const Navbar = ({ openSearchPage }) => {
         </h4>
         {user && (
           <div className="dropdown-content">
-            <p>{user.email}</p>
-            <p>{user.name}</p>
+            <p>Name: {user.name}</p>
+            <p>Email: {user.email}</p>
           </div>
         )}
       </div>

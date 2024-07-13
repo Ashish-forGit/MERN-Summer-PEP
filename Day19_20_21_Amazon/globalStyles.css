@@ -33,11 +33,20 @@
   }
   
   .logout-button button:hover {
-    color: #febd69;
+    color: orange;
   }
+
+  
   .profile-dropdown {
     position: relative;
     display: inline-block;
+  }
+
+  .profile-dropdown h4:hover{
+    color: orange;
+  }
+  .profile{
+    display: flex;
   }
   
   .profile-dropdown .dropdown-content {
@@ -50,6 +59,7 @@
     z-index: 1;
     color: black;
     text-align: left;
+    border-radius: 10px;
   }
   
   .profile-dropdown:hover .dropdown-content {
@@ -57,6 +67,10 @@
     color: #b12704;
   }
 
+  .dropdown-content{
+    display: flex;
+    padding: 10px;
+  }
 
 
 .homepage-nav>h4{
@@ -369,99 +383,6 @@ body {
 }
 
 
-
-
- /* footer */
-
-/* .footer {
-    
-    background-color: #16171a;
-    padding: 30px 20px;
-    border-top: 1px solid #ddd;
-    text-align: center;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-}
-
-.section-p1 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.col {
-    flex: 1;
-    max-width: 200px;
-   
-    color: white;
-}
-.col>a{
-    color: #d2d6db; 
-    text-decoration: none; 
-    font-weight: normal; 
-    transition: color 0.3s ease; 
-}
-.col.install {
-    max-width: 300px;
-}
-
-.logo {
-    width: 100px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.icon {
-    margin-top: 10px;
-    margin-top: 5px;
-    font-size: 30px;
-    gap: 5px;
-}
-
-.icon i {
-    margin: 0 5px;
-    font-size: 1.5rem;
-    color: #333;
-    gap: 5px;
-
-}
-
-.row {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-}
-
-.install img {
-    width: 100px;
-    height: auto;
-    margin-right: 10px;
-}
-
-.copyright {
-    margin-top: 20px;
-    font-size: 0.8rem;
-    color: #888;
-}
-
-.store-icons{
-    margin-top: 5px;
-    font-size: 50px;
-}
-
-.payment-icons{
-    margin-top: 5px;
-    font-size: 50px;
-}
-
-.follow{
-    gap: 5px;
-} */
 
 
 /* cart.css */

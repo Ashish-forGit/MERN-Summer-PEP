@@ -46,6 +46,7 @@ const Login = () => {
         <div className="signup-container">
             <div className="signup-form">
                 <img src="https://www.logo.wine/a/logo/Amazon_(company)/Amazon_(company)-Logo.wine.svg" height={100} width={200}/>
+                <h3>Use your credentials to login</h3>
                 <input
                     type="email"
                     placeholder="Email"
