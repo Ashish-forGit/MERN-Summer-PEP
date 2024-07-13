@@ -22,7 +22,7 @@ const SearchPage = (props) => {
             <CategoryBar  />
             {loading ? (
                 <div className="product-loading">
-                    <img src='../src/img/loading.gif'  />
+                    <img src="../img/loading.gif" alt="Loading..." />
                     🙏🏻 Please Wait, Products 👜 are Loading...</div>
                 
             ) : (
@@ -37,7 +37,7 @@ const SearchPage = (props) => {
                                     {elem.rating} out of 5 stars
                                     <span className="rating-count">({elem.stock} in stock)</span>
                                 </div>
-                                <p className="product-price">₹{elem.price}</p>
+                                <p className="product-price">${elem.price}</p>
                                 <button onClick={()=>{addToCart(elem)}} className="add-to-cart-button"  >Add to cart</button>
                             </div>
                         </div>

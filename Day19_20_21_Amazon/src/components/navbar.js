@@ -7,7 +7,6 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import AppContext from "../context/appContext";
 import { Link } from "react-router-dom";
-
 import { SlLogout } from "react-icons/sl";
 
 const Navbar = ({ openSearchPage }) => {
@@ -34,7 +33,7 @@ const Navbar = ({ openSearchPage }) => {
     <nav className="homepage-nav">
       <BsAmazon />
       <h4 className="title-h4" onClick={openHomePage}>
-        Amazon.in{" "}
+        Amazon.in
       </h4>
       <p>
         <FaLocationDot />
@@ -55,22 +54,27 @@ const Navbar = ({ openSearchPage }) => {
         </button>
       </div>
 
-      <h4 className="profile">
-      <FaUser /> { user ? user.name : 'Profile'}
-      </h4>
+      <div className="profile-dropdown">
+        <h4 className="profile">
+          <FaUser /> {user ? user.name : 'Profile'}
+        </h4>
+        {user && (
+          <div className="dropdown-content">
+            <p>{user.email}</p>
+            <p>{user.name}</p>
+          </div>
+        )}
+      </div>
 
       <h4 title={JSON.stringify(cart)}>
         <Link to="/cart" className="nav-cart-link">
           <FaShoppingCart /> Cart
         </Link>
       </h4>
-      <h4 className="logout-button">
-      <SlLogout />
-      <button onClick={handleLogout} >
-          Logout
-        </button>
-      </h4>
-
+      <div className="logout-button">
+        <SlLogout />
+        <button onClick={handleLogout}>Logout</button>
+      </div>
     </nav>
   );
 };

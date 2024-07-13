@@ -35,12 +35,27 @@
   .logout-button button:hover {
     color: #febd69;
   }
-.profile{
-    display: flex;
-    color: white;
-    text-decoration: none;
-    gap: 3px;
-}
+  .profile-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .profile-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    color: black;
+    text-align: left;
+  }
+  
+  .profile-dropdown:hover .dropdown-content {
+    display: block;
+    color: #b12704;
+  }
 
 
 
@@ -353,6 +368,9 @@ body {
     background-color: #f3a847;
 }
 
+
+
+
  /* footer */
 
 /* .footer {
@@ -450,14 +468,18 @@ body {
 
 .cart-container {
     padding: 20px;
-    justify-content: end;
-    margin-bottom: 0px;
+    justify-content: center;
+    margin-bottom: 300px;
+    align-items: center;
+    text-align: center;
     
+    gap: 10px;
     height: auto;
 }
 
 .cart-item {
     display: flex;
+    padding: 20px;
     margin-bottom: 10px;
 }
 
@@ -487,6 +509,29 @@ body {
 .cart-item-details button:hover {
     background-color: darkred;
 }
+.cart-total {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.cart-total button {
+    background-color: greenyellow;
+    color: black;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: large;
+    box-shadow: #007185;
+    border-radius: 5px;
+}
+
+.cart-total button:hover {
+    background-color: darkred;
+    color: white;
+}
+
+
 
 /* Optional: Customize the ToastContainer position */
 .Toastify__toast-container {

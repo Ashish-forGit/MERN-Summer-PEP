@@ -40,7 +40,7 @@ const ProductInfo = ({ setSearchText }) => {
                         {productInfo.rating} out of 5 stars
                         <span className="rating-count">({productInfo.stock} in stock)</span>
                     </div>
-                    <p className="product-price">₹{productInfo.price}</p>
+                    <p className="product-price">${productInfo.price}</p>
                     <button onClick={()=>{addToCart(productInfo)}} className="add-to-cart-button-info">Add to Cart</button>
                 </div>
             </div>
